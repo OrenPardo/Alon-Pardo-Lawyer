@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-tag">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Legal Counsel | Specialist Attorney</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Inter', 'Assistant', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', 'Assistant', serif; }
         .hero-gradient { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); }
         .accent-border { border-left: 4px solid #c5a059; }
+        [dir="rtl"] .accent-border { border-left: 0; border-right: 4px solid #c5a059; }
         .bg-gold { background-color: #c5a059; }
         .text-gold { color: #c5a059; }
     </style>
@@ -20,12 +21,15 @@
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold tracking-tighter">LEGAL<span class="text-gold">CORE</span></div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
-                <a href="#expertise" class="hover:text-gold transition">Expertise</a>
-                <a href="#about" class="hover:text-gold transition">Philosophy</a>
-                <a href="#contact" class="hover:text-gold transition">Consultation</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest rtl:space-x-reverse">
+                <a href="#expertise" class="hover:text-gold transition" data-t="nav_expertise">Expertise</a>
+                <a href="#about" class="hover:text-gold transition" data-t="nav_philosophy">Philosophy</a>
+                <a href="#contact" class="hover:text-gold transition" data-t="nav_consultation">Consultation</a>
             </div>
-            <a href="#contact" class="bg-stone-900 text-white px-6 py-2 text-sm uppercase tracking-widest hover:bg-gold transition">Get in Touch</a>
+            <div class="flex items-center gap-6">
+                <button id="lang-toggle" class="text-xs font-bold uppercase tracking-widest hover:text-gold transition">HE</button>
+                <a href="#contact" class="bg-stone-900 text-white px-6 py-2 text-sm uppercase tracking-widest hover:bg-gold transition" data-t="nav_get_in_touch">Get in Touch</a>
+            </div>
         </div>
     </nav>
 
@@ -33,13 +37,13 @@
     <section class="relative min-h-screen flex items-center pt-20 hero-gradient text-white overflow-hidden">
         <div class="absolute right-0 top-0 w-1/3 h-full bg-stone-800/20 skew-x-12 transform translate-x-1/2"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="text-gold uppercase tracking-[0.3em] text-sm mb-4 block">Independent Legal Specialist</span>
-                <h1 class="text-5xl md:text-7xl mb-6 leading-tight">Upholding Justice <br>With Precision.</h1>
-                <p class="text-stone-400 text-lg mb-8 max-w-lg leading-relaxed">Dedicated representation across Criminal, Transport, Administrative, and Labour law. Tailored legal strategies for complex cases.</p>
+            <div class="rtl:text-right">
+                <span class="text-gold uppercase tracking-[0.3em] text-sm mb-4 block" data-t="hero_subtitle">Independent Legal Specialist</span>
+                <h1 class="text-5xl md:text-7xl mb-6 leading-tight" data-t="hero_title">Upholding Justice <br>With Precision.</h1>
+                <p class="text-stone-400 text-lg mb-8 max-w-lg leading-relaxed" data-t="hero_description">Dedicated representation across Criminal, Transport, Administrative, and Labour law. Tailored legal strategies for complex cases.</p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#expertise" class="bg-gold text-stone-900 px-8 py-4 text-center font-bold uppercase tracking-widest hover:bg-white transition">Explore Expertise</a>
-                    <a href="#contact" class="border border-stone-500 px-8 py-4 text-center font-bold uppercase tracking-widest hover:bg-white hover:text-stone-900 transition">Immediate Help</a>
+                    <a href="#expertise" class="bg-gold text-stone-900 px-8 py-4 text-center font-bold uppercase tracking-widest hover:bg-white transition" data-t="hero_cta_1">Explore Expertise</a>
+                    <a href="#contact" class="border border-stone-500 px-8 py-4 text-center font-bold uppercase tracking-widest hover:bg-white hover:text-stone-900 transition" data-t="hero_cta_2">Immediate Help</a>
                 </div>
             </div>
             <div class="hidden md:block">
@@ -54,42 +58,42 @@
     <!-- Expertise Section -->
     <section id="expertise" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16">
-                <h2 class="text-4xl md:text-5xl mb-4">Core Expertise</h2>
-                <div class="h-1 w-20 bg-gold"></div>
+            <div class="mb-16 rtl:text-right">
+                <h2 class="text-4xl md:text-5xl mb-4" data-t="expertise_title">Core Expertise</h2>
+                <div class="h-1 w-20 bg-gold rtl:mr-auto rtl:ml-0"></div>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Criminal Law -->
-                <div class="p-8 border border-stone-100 hover:border-gold transition-colors group">
+                <div class="p-8 border border-stone-100 hover:border-gold transition-colors group rtl:text-right">
                     <div class="mb-6 text-gold">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
                     </div>
-                    <h3 class="text-xl mb-4">Criminal Law</h3>
-                    <p class="text-stone-500 text-sm leading-relaxed">Robust defense strategies for individuals and businesses facing criminal allegations.</p>
+                    <h3 class="text-xl mb-4" data-t="law_criminal_title">Criminal Law</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed" data-t="law_criminal_desc">Robust defense strategies for individuals and businesses facing criminal allegations.</p>
                 </div>
                 <!-- Transport Law -->
-                <div class="p-8 border border-stone-100 hover:border-gold transition-colors">
+                <div class="p-8 border border-stone-100 hover:border-gold transition-colors rtl:text-right">
                     <div class="mb-6 text-gold">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
                     </div>
-                    <h3 class="text-xl mb-4">Transport Law</h3>
-                    <p class="text-stone-500 text-sm leading-relaxed">Navigating logistics regulations, liability claims, and international freight disputes.</p>
+                    <h3 class="text-xl mb-4" data-t="law_transport_title">Transport Law</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed" data-t="law_transport_desc">Navigating logistics regulations, liability claims, and international freight disputes.</p>
                 </div>
                 <!-- Administrative Law -->
-                <div class="p-8 border border-stone-100 hover:border-gold transition-colors">
+                <div class="p-8 border border-stone-100 hover:border-gold transition-colors rtl:text-right">
                     <div class="mb-6 text-gold">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                     </div>
-                    <h3 class="text-xl mb-4">Administrative Law</h3>
-                    <p class="text-stone-500 text-sm leading-relaxed">Handling disputes with government entities and public regulatory bodies.</p>
+                    <h3 class="text-xl mb-4" data-t="law_admin_title">Administrative Law</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed" data-t="law_admin_desc">Handling disputes with government entities and public regulatory bodies.</p>
                 </div>
                 <!-- Labour Law -->
-                <div class="p-8 border border-stone-100 hover:border-gold transition-colors">
+                <div class="p-8 border border-stone-100 hover:border-gold transition-colors rtl:text-right">
                     <div class="mb-6 text-gold">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
-                    <h3 class="text-xl mb-4">Labour Law</h3>
-                    <p class="text-stone-500 text-sm leading-relaxed">Protecting employer and employee rights in workplace disputes and contract negotiations.</p>
+                    <h3 class="text-xl mb-4" data-t="law_labour_title">Labour Law</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed" data-t="law_labour_desc">Protecting employer and employee rights in workplace disputes and contract negotiations.</p>
                 </div>
             </div>
         </div>
@@ -101,20 +105,20 @@
             <div class="order-2 md:order-1">
                 <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800" alt="Legal Office" class="rounded shadow-xl">
             </div>
-            <div class="order-1 md:order-2">
-                <h2 class="text-4xl mb-8 leading-tight">Strategic Advocacy <br>Tailored to Your Case.</h2>
+            <div class="order-1 md:order-2 rtl:text-right">
+                <h2 class="text-4xl mb-8 leading-tight" data-t="about_title">Strategic Advocacy <br>Tailored to Your Case.</h2>
                 <div class="space-y-8">
-                    <div class="accent-border pl-6">
-                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-gold">Direct Access</h4>
-                        <p class="text-stone-600 text-sm">Work directly with me throughout your case. No intermediaries, no diluted communication.</p>
+                    <div class="accent-border pl-6 rtl:pl-0 rtl:pr-6">
+                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-gold" data-t="about_item_1_title">Direct Access</h4>
+                        <p class="text-stone-600 text-sm" data-t="about_item_1_desc">Work directly with me throughout your case. No intermediaries, no diluted communication.</p>
                     </div>
-                    <div class="accent-border pl-6">
-                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-gold">Evidence-Driven</h4>
-                        <p class="text-stone-600 text-sm">Meticulous investigation and a rigorous approach to building your defense or claim.</p>
+                    <div class="accent-border pl-6 rtl:pl-0 rtl:pr-6">
+                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-gold" data-t="about_item_2_title">Evidence-Driven</h4>
+                        <p class="text-stone-600 text-sm" data-t="about_item_2_desc">Meticulous investigation and a rigorous approach to building your defense or claim.</p>
                     </div>
-                    <div class="accent-border pl-6">
-                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-gold">Transparent Costs</h4>
-                        <p class="text-stone-600 text-sm">Clear fee structures and regular updates on the financial aspects of your legal journey.</p>
+                    <div class="accent-border pl-6 rtl:pl-0 rtl:pr-6">
+                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-gold" data-t="about_item_3_title">Transparent Costs</h4>
+                        <p class="text-stone-600 text-sm" data-t="about_item_3_desc">Clear fee structures and regular updates on the financial aspects of your legal journey.</p>
                     </div>
                 </div>
             </div>
@@ -124,50 +128,161 @@
     <!-- Contact Section -->
     <section id="contact" class="py-24 bg-stone-900 text-white">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl mb-6">Schedule a Confidential Consultation</h2>
-            <p class="text-stone-400 mb-12">Immediate response for urgent matters. Your first step towards a resolution begins with a conversation.</p>
-            <form class="grid md:grid-cols-2 gap-6 text-left">
+            <h2 class="text-4xl md:text-5xl mb-6" data-t="contact_title">Schedule a Confidential Consultation</h2>
+            <p class="text-stone-400 mb-12" data-t="contact_subtitle">Immediate response for urgent matters. Your first step towards a resolution begins with a conversation.</p>
+            <form class="grid md:grid-cols-2 gap-6 text-left rtl:text-right">
                 <div>
-                    <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2">Full Name</label>
+                    <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_name">Full Name</label>
                     <input type="text" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition">
                 </div>
                 <div>
-                    <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2">Email Address</label>
+                    <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_email">Email Address</label>
                     <input type="email" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition">
                 </div>
                 <div class="md:col-span-2">
-                    <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2">Case Type</label>
+                    <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_case_type">Case Type</label>
                     <select class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition appearance-none">
-                        <option>Criminal Law</option>
-                        <option>Transport Law</option>
-                        <option>Administrative Law</option>
-                        <option>Labour Law</option>
-                        <option>Other Enquiry</option>
+                        <option data-t="opt_criminal">Criminal Law</option>
+                        <option data-t="opt_transport">Transport Law</option>
+                        <option data-t="opt_admin">Administrative Law</option>
+                        <option data-t="opt_labour">Labour Law</option>
+                        <option data-t="opt_other">Other Enquiry</option>
                     </select>
                 </div>
                 <div class="md:col-span-2">
-                    <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2">Message Summary</label>
+                    <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_message">Message Summary</label>
                     <textarea rows="4" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition"></textarea>
                 </div>
-                <button class="md:col-span-2 bg-gold text-stone-900 font-bold uppercase tracking-widest py-5 hover:bg-white transition">Submit Consultation Request</button>
+                <button class="md:col-span-2 bg-gold text-stone-900 font-bold uppercase tracking-widest py-5 hover:bg-white transition" data-t="form_submit">Submit Consultation Request</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-12 bg-stone-950 text-stone-600 border-t border-stone-800">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:row justify-between items-center gap-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="text-xl font-bold tracking-tighter text-white">LEGAL<span class="text-gold">CORE</span></div>
-            <div class="text-xs uppercase tracking-widest space-x-6">
-                <span>&copy; 2026 LegalCore Advocacy. All rights reserved.</span>
-                <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                <a href="#" class="hover:text-white transition">Legal Notice</a>
+            <div class="text-xs uppercase tracking-widest space-x-6 rtl:space-x-reverse">
+                <span data-t="footer_copy">&copy; 2026 LegalCore Advocacy. All rights reserved.</span>
+                <a href="#" class="hover:text-white transition" data-t="footer_privacy">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition" data-t="footer_legal">Legal Notice</a>
             </div>
-            <div class="flex space-x-6">
+            <div class="flex space-x-6 rtl:space-x-reverse">
                 <a href="#" class="hover:text-gold transition">LinkedIn</a>
                 <a href="#" class="hover:text-gold transition">Twitter</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        const translations = {
+            en: {
+                nav_expertise: "Expertise",
+                nav_philosophy: "Philosophy",
+                nav_consultation: "Consultation",
+                nav_get_in_touch: "Get in Touch",
+                hero_subtitle: "Independent Legal Specialist",
+                hero_title: "Upholding Justice With Precision.",
+                hero_description: "Dedicated representation across Criminal, Transport, Administrative, and Labour law. Tailored legal strategies for complex cases.",
+                hero_cta_1: "Explore Expertise",
+                hero_cta_2: "Immediate Help",
+                expertise_title: "Core Expertise",
+                law_criminal_title: "Criminal Law",
+                law_criminal_desc: "Robust defense strategies for individuals and businesses facing criminal allegations.",
+                law_transport_title: "Transport Law",
+                law_transport_desc: "Navigating logistics regulations, liability claims, and international freight disputes.",
+                law_admin_title: "Administrative Law",
+                law_admin_desc: "Handling disputes with government entities and public regulatory bodies.",
+                law_labour_title: "Labour Law",
+                law_labour_desc: "Protecting employer and employee rights in workplace disputes and contract negotiations.",
+                about_title: "Strategic Advocacy Tailored to Your Case.",
+                about_item_1_title: "Direct Access",
+                about_item_1_desc: "Work directly with me throughout your case. No intermediaries, no diluted communication.",
+                about_item_2_title: "Evidence-Driven",
+                about_item_2_desc: "Meticulous investigation and a rigorous approach to building your defense or claim.",
+                about_item_3_title: "Transparent Costs",
+                about_item_3_desc: "Clear fee structures and regular updates on the financial aspects of your legal journey.",
+                contact_title: "Schedule a Confidential Consultation",
+                contact_subtitle: "Immediate response for urgent matters. Your first step towards a resolution begins with a conversation.",
+                form_name: "Full Name",
+                form_email: "Email Address",
+                form_case_type: "Case Type",
+                form_message: "Message Summary",
+                form_submit: "Submit Consultation Request",
+                opt_criminal: "Criminal Law",
+                opt_transport: "Transport Law",
+                opt_admin: "Administrative Law",
+                opt_labour: "Labour Law",
+                opt_other: "Other Enquiry",
+                footer_copy: "&copy; 2026 LegalCore Advocacy. All rights reserved.",
+                footer_privacy: "Privacy Policy",
+                footer_legal: "Legal Notice"
+            },
+            he: {
+                nav_expertise: "תחומי התמחות",
+                nav_philosophy: "פילוסופיה משפטית",
+                nav_consultation: "ייעוץ",
+                nav_get_in_touch: "צור קשר",
+                hero_subtitle: "מומחה משפטי עצמאי",
+                hero_title: "עומדים על הצדק בדיוק מרבי",
+                hero_description: "ייצוג מסור בתחומי המשפט הפלילי, התעבורה, המנהלי והעבודה. אסטרטגיות משפטיות מותאמות אישית למקרים מורכבים.",
+                hero_cta_1: "גלה את המומחיות",
+                hero_cta_2: "עזרה מיידית",
+                expertise_title: "מומחיות ליבה",
+                law_criminal_title: "משפט פלילי",
+                law_criminal_desc: "אסטרטגיות הגנה חזקות ליחידים ועסקים העומדים בפני אישומים פליליים.",
+                law_transport_title: "דיני תעבורה",
+                law_transport_desc: "ניווט בתקנות לוגיסטיקה, תביעות חבות וסכסוכי הובלה בינלאומיים.",
+                law_admin_title: "משפט מנהלי",
+                law_admin_desc: "טיפול בסכסוכים מול גופים ממשלתיים ורשויות רגולטוריות ציבוריות.",
+                law_labour_title: "דיני עבודה",
+                law_labour_desc: "הגנה על זכויות מעסיקים ועובדים בסכסוכי עבודה ומשא ומתן על חוזים.",
+                about_title: "ייצוג אסטרטגי המותאם לתיק שלך",
+                about_item_1_title: "גישה ישירה",
+                about_item_1_desc: "עבודה ישירות מולי לאורך כל התיק. ללא מתווכים וללא תקשורת מדוללת.",
+                about_item_2_title: "מבוסס ראיות",
+                about_item_2_desc: "חקירה מדוקדקת וגישה קפדנית לבניית ההגנה או התביעה שלך.",
+                about_item_3_title: "עלויות שקופות",
+                about_item_3_desc: "מבני שכר טרחה ברורים ועדכונים שוטפים על ההיבטים הפיננסיים של התהליך המשפטי.",
+                contact_title: "קבע ייעוץ חסוי",
+                contact_subtitle: "מענה מיידי לעניינים דחופים. הצעד הראשון שלך לפתרון מתחיל בשיחה.",
+                form_name: "שם מלא",
+                form_email: "כתובת אימייל",
+                form_case_type: "סוג התיק",
+                form_message: "תקציר המקרה",
+                form_submit: "שלח בקשה לייעוץ",
+                opt_criminal: "משפט פלילי",
+                opt_transport: "דיני תעבורה",
+                opt_admin: "משפט מנהלי",
+                opt_labour: "דיני עבודה",
+                opt_other: "פנייה אחרת",
+                footer_copy: "&copy; 2026 LegalCore Advocacy. כל הזכויות שמורות.",
+                footer_privacy: "מדיניות פרטיות",
+                footer_legal: "הודעה משפטית"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function updateContent() {
+            document.querySelectorAll('[data-t]').forEach(el => {
+                const key = el.getAttribute('data-t');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+            
+            const html = document.getElementById('html-tag');
+            html.setAttribute('lang', currentLang);
+            html.setAttribute('dir', currentLang === 'he' ? 'rtl' : 'ltr');
+            
+            document.getElementById('lang-toggle').innerText = currentLang === 'en' ? 'HE' : 'EN';
+        }
+
+        document.getElementById('lang-toggle').addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'he' : 'en';
+            updateContent();
+        });
+    </script>
 </body>
 </html>
