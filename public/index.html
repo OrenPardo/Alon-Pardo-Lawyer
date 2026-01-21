@@ -353,7 +353,7 @@
             });
             
             // Update expertise links with language parameter
-            document.querySelectorAll('a[href^="/expertise.html"]').forEach(link => {
+            document.querySelectorAll('a[href^="/expertise.html"], a[href^="/privacy.html"], a[href^="/legal.html"]').forEach(link => {
                 const url = new URL(link.href, window.location.origin);
                 url.searchParams.set('lang', currentLang);
                 link.href = url.pathname + url.search;

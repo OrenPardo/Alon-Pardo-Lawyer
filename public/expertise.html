@@ -187,6 +187,7 @@
             document.documentElement.lang = lang;
             
             document.getElementById('brand-link').innerHTML = content[lang].brand;
+            document.getElementById('brand-link').href = `/${lang === 'en' ? '?lang=en' : ''}`;
             // Update brand font size based on language to match index.html
             if (lang === 'he') {
                 document.getElementById('brand-link').classList.remove('text-2xl');
@@ -196,6 +197,7 @@
                 document.getElementById('brand-link').classList.add('text-2xl');
             }
             document.getElementById('back-link').textContent = content[lang].back;
+            document.getElementById('back-link').href = `/${lang === 'en' ? '?lang=en' : ''}`;
             document.getElementById('nav-contact-button').textContent = content[lang].cta_button_nav;
             document.getElementById('services-label').textContent = content[lang].services_label;
             document.getElementById('cta-title').textContent = content[lang].cta_title;
