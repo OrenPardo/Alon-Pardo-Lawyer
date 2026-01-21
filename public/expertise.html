@@ -200,6 +200,19 @@
             document.getElementById('back-link').href = `/${lang === 'en' ? '?lang=en' : ''}`;
             document.getElementById('nav-contact-button').textContent = content[lang].cta_button_nav;
             document.getElementById('nav-contact-button').href = `/${lang === 'en' ? '?lang=en' : ''}#contact`;
+            
+            // Add or update other header links if they exist in expertise.html
+            document.querySelectorAll('nav a').forEach(link => {
+                if (link.id !== 'brand-link' && link.id !== 'back-link' && link.id !== 'nav-contact-button') {
+                    const url = new URL(link.href, window.location.origin);
+                    if (lang === 'en') {
+                        url.searchParams.set('lang', 'en');
+                    } else {
+                        url.searchParams.delete('lang');
+                    }
+                    link.href = url.pathname + url.search + url.hash;
+                }
+            });
             document.getElementById('services-label').textContent = content[lang].services_label;
             document.getElementById('cta-title').textContent = content[lang].cta_title;
             document.getElementById('cta-desc').textContent = content[lang].cta_desc;
