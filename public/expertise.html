@@ -203,15 +203,13 @@
             
             // Add or update other header links if they exist in expertise.html
             document.querySelectorAll('nav a').forEach(link => {
-                if (link.id !== 'brand-link' && link.id !== 'back-link' && link.id !== 'nav-contact-button') {
-                    const url = new URL(link.href, window.location.origin);
-                    if (lang === 'en') {
-                        url.searchParams.set('lang', 'en');
-                    } else {
-                        url.searchParams.delete('lang');
-                    }
-                    link.href = url.pathname + url.search + url.hash;
+                const url = new URL(link.href, window.location.origin);
+                if (lang === 'en') {
+                    url.searchParams.set('lang', 'en');
+                } else {
+                    url.searchParams.delete('lang');
                 }
+                link.href = url.pathname + url.search + url.hash;
             });
             document.getElementById('services-label').textContent = content[lang].services_label;
             document.getElementById('cta-title').textContent = content[lang].cta_title;
