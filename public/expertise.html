@@ -58,9 +58,9 @@
 </head>
 <body class="bg-stone-50 text-stone-900">
     <div id="expertise-background" class="expertise-bg text-gold"></div>
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200">
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200" aria-label="Main Navigation">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold tracking-tighter hover:text-gold transition rtl:text-right" id="brand-link">ALON <span class="text-gold">PARDO</span></a>
+            <a href="/" class="text-2xl font-bold tracking-tighter hover:text-gold transition focus:outline-none text-left rtl:text-right" id="brand-link">ALON <span class="text-gold">PARDO</span></a>
             <div class="flex items-center gap-6">
                 <a href="/" class="hidden md:block text-xs font-bold uppercase tracking-widest hover:text-gold transition" id="back-link">Back to Home</a>
                 <a href="/#contact" class="bg-stone-900 text-white px-6 py-2 text-sm uppercase tracking-widest hover:bg-gold transition" id="nav-contact-button">Get in Touch</a>
@@ -187,6 +187,14 @@
             document.documentElement.lang = lang;
             
             document.getElementById('brand-link').innerHTML = content[lang].brand;
+            // Update brand font size based on language to match index.html
+            if (lang === 'he') {
+                document.getElementById('brand-link').classList.remove('text-2xl');
+                document.getElementById('brand-link').classList.add('text-[2.0rem]');
+            } else {
+                document.getElementById('brand-link').classList.remove('text-[2.0rem]');
+                document.getElementById('brand-link').classList.add('text-2xl');
+            }
             document.getElementById('back-link').textContent = content[lang].back;
             document.getElementById('nav-contact-button').textContent = content[lang].cta_button_nav;
             document.getElementById('services-label').textContent = content[lang].services_label;
