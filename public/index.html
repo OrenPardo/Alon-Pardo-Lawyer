@@ -357,7 +357,9 @@
             }
         };
 
-        let currentLang = 'he';
+        // Read language from URL parameter, default to Hebrew
+        const urlParams = new URLSearchParams(window.location.search);
+        let currentLang = urlParams.get('lang') === 'en' ? 'en' : 'he';
 
         function updateContent() {
             document.querySelectorAll('[data-t]').forEach(el => {
