@@ -429,9 +429,9 @@
             const heroTitle = document.querySelector('h1[data-t="hero_title"]');
             if (currentLang === 'he') {
                 heroTitle.classList.remove('text-5xl', 'md:text-7xl');
-                heroTitle.classList.add('text-[5.5rem]');
+                heroTitle.classList.add('text-[5.5rem]', 'whitespace-nowrap');
             } else {
-                heroTitle.classList.remove('text-[5.5rem]');
+                heroTitle.classList.remove('text-[5.5rem]', 'whitespace-nowrap');
                 heroTitle.classList.add('text-5xl', 'md:text-7xl');
             }
 
