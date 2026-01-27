@@ -58,13 +58,17 @@
 </head>
 <body class="bg-stone-50 text-stone-900">
     <div id="expertise-background" class="expertise-bg text-gold"></div>
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200" aria-label="Main Navigation">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold tracking-tighter hover:text-gold transition focus:outline-none text-left rtl:text-right" id="brand-link">ALON <span class="text-gold">PARDO</span></a>
+            <button onclick="window.location.href='/'+(lang === 'en' ? '?lang=en' : '')" class="text-2xl font-bold tracking-tighter hover:text-gold transition focus:outline-none text-left rtl:text-right" id="brand-link" aria-label="Back to home">ALON <span class="text-gold">PARDO</span></button>
+            <div class="hidden md:flex space-x-8 font-medium uppercase tracking-widest rtl:space-x-reverse">
+                <a href="/#expertise" class="hover:text-gold transition" id="nav-expertise">תחומי עיסוק</a>
+                <a href="/#about" class="hover:text-gold transition" id="nav-philosophy">איך אני עובד</a>
+            </div>
             <div class="flex items-center gap-6">
                 <button id="lang-toggle" class="text-xs font-bold uppercase tracking-widest hover:text-gold transition" aria-label="Switch Language / החלף שפה">HE</button>
-                <a href="/" class="hidden md:block text-xs font-bold uppercase tracking-widest hover:text-gold transition" id="back-link">Back to Home</a>
-                <a href="/#contact" class="bg-stone-900 text-white px-6 py-2 text-sm uppercase tracking-widest hover:bg-gold transition" id="nav-contact-button">Get in Touch</a>
+                <a href="/#contact" class="bg-stone-900 text-white px-6 py-2 text-sm uppercase tracking-widest hover:bg-gold transition" id="nav-contact-button">Book a Consultation</a>
             </div>
         </div>
     </nav>
@@ -163,6 +167,8 @@
     <script>
         const content = {
             en: {
+                nav_expertise: "Practice Areas",
+                nav_philosophy: "How I Work",
                 back: "Back to Home",
                 services_label: "Services (what I handle)",
                 cta_title: "Speak to a Lawyer",
@@ -182,6 +188,8 @@
                 step3_desc: "We'll set a formal call or office meeting for deep strategy."
             },
             he: {
+                nav_expertise: "תחומי עיסוק",
+                nav_philosophy: "איך אני עובד",
                 back: "חזרה לדף הבית",
                 services_label: "שירותים (תחומי טיפול)",
                 cta_title: "דברו איתי",
@@ -391,18 +399,16 @@
             document.documentElement.lang = lang;
             
             document.getElementById('brand-link').innerHTML = content[lang].brand;
-            document.getElementById('brand-link').href = `/${lang === 'en' ? '?lang=en' : ''}`;
+            document.getElementById('nav-expertise').textContent = content[lang].nav_expertise;
+            document.getElementById('nav-philosophy').textContent = content[lang].nav_philosophy;
+            
             // Adjust header font size based on language to match index.html
             if (lang === 'he') {
                 document.getElementById('brand-link').classList.remove('text-2xl');
                 document.getElementById('brand-link').classList.add('text-[2.0rem]');
-                document.getElementById('back-link').classList.remove('text-xs');
-                document.getElementById('back-link').classList.add('text-[1.10rem]');
             } else {
                 document.getElementById('brand-link').classList.remove('text-[2.0rem]');
                 document.getElementById('brand-link').classList.add('text-2xl');
-                document.getElementById('back-link').classList.remove('text-[1.10rem]');
-                document.getElementById('back-link').classList.add('text-xs');
             }
             
             // Synchronize all links with the current language
