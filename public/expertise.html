@@ -82,6 +82,7 @@
                         <div id="icon-container" class="mb-6 text-gold"></div>
                         <h1 id="expertise-title" class="text-5xl md:text-7xl mb-6 leading-tight"></h1>
                         <p id="expertise-desc" class="text-xl md:text-2xl text-stone-600 leading-relaxed max-w-2xl"></p>
+                        <p id="last-updated-container" class="text-sm text-stone-400 mt-2 hidden"></p>
                         <div id="expertise-scope" class="mt-8 px-6 py-3 bg-stone-100 border-l-4 rtl:border-l-0 rtl:border-r-4 border-gold text-stone-600 font-semibold tracking-wide inline-block"></div>
                     </div>
 
@@ -113,50 +114,8 @@
                     </div>
                 </div>
 
-                <!-- Right Sidebar CTA Card -->
-                <div class="lg:col-span-1 sticky top-32">
-                    <div class="bg-stone-50 border border-stone-200 p-8 rounded-sm text-center shadow-sm">
-                        <h3 class="text-2xl mb-4 font-bold" id="cta-title">Speak to a Lawyer</h3>
-                        <p class="text-stone-600 mb-6 text-sm" id="cta-desc">Send 2-3 sentences and I'll reply with next steps.</p>
-                        <a href="/#contact" class="inline-block bg-gold text-stone-900 border-2 border-gold px-8 py-4 font-bold uppercase tracking-widest hover:bg-stone-900 hover:text-white hover:border-stone-900 transition w-full text-center" id="cta-button-secondary">Book a Consultation</a>
-                        <p id="cta-microcopy" class="mt-3 text-stone-400 text-xs"></p>
-                        
-                        <div id="urgent-contact" class="mt-8 border-t border-stone-200 pt-6">
-                            <p id="urgent-label" class="text-stone-500 text-sm mb-3"></p>
-                            <a href="https://wa.me/972524203401" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-500 transition font-medium w-full justify-center">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                <span id="whatsapp-btn-text">WhatsApp</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- What happens next -->
-                    <div class="mt-8 p-8 bg-stone-900 text-white rounded-sm rtl:text-right">
-                        <h4 class="text-xl font-bold mb-6 border-b border-stone-700 pb-4" id="next-steps-title">What happens next</h4>
-                        <ol class="space-y-6">
-                            <li class="flex gap-4 items-start">
-                                <span class="bg-gold text-stone-900 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">1</span>
-                                <div>
-                                    <p class="font-bold text-sm" id="step-1-title">You send a short summary</p>
-                                    <p class="text-stone-400 text-xs mt-1" id="step-1-desc">Describe your situation briefly via the form or WhatsApp.</p>
-                                </div>
-                            </li>
-                            <li class="flex gap-4 items-start">
-                                <span class="bg-gold text-stone-900 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">2</span>
-                                <div>
-                                    <p class="font-bold text-sm" id="step-2-title">I reply with next steps</p>
-                                    <p class="text-stone-400 text-xs mt-1" id="step-2-desc">I will provide immediate initial guidance on how to proceed.</p>
-                                </div>
-                            </li>
-                            <li class="flex gap-4 items-start">
-                                <span class="bg-gold text-stone-900 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">3</span>
-                                <div>
-                                    <p class="font-bold text-sm" id="step-3-title">We schedule a meeting</p>
-                                    <p class="text-stone-400 text-xs mt-1" id="step-3-desc">If needed, we'll set a formal call or office meeting for deep strategy.</p>
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
+                <!-- Sidebar Container (Injected via JS) -->
+                <div id="sidebar-container" class="lg:col-span-1 sticky top-32">
                 </div>
             </div>
         </div>
@@ -614,9 +573,10 @@
             privacy: {
                 title: { en: "Privacy Policy", he: "מדיניות פרטיות" },
                 desc: { 
-                    en: "Last updated: January 2026. Data controller: Alon Pardo (Israel). Contact: privacy@alonpardo.law", 
-                    he: "עודכן לאחרונה: ינואר 2026. בעל השליטה בנתונים: אלון פרדו (ישראל). צרו קשר: privacy@alonpardo.law" 
+                    en: "Data controller: Alon Pardo (Israel). Contact: privacy@alonpardo.law", 
+                    he: "בעל השליטה בנתונים: אלון פרדו (ישראל). צרו קשר: privacy@alonpardo.law" 
                 },
+                last_updated: { en: "Last updated: January 2026", he: "עודכן לאחרונה: ינואר 2026" },
                 scope: {
                     en: "Data Collection • Legal Basis • Sharing • Your Rights",
                     he: "איסוף נתונים • בסיס משפטי • שיתוף • הזכויות שלך"
@@ -624,57 +584,55 @@
                 common_situations_title: { en: "Data We Collect", he: "המידע שאנו אוספים" },
                 common_situations: {
                     en: [
-                        "Contact details (name, phone, email) from our forms",
-                        "Case type and message content provided by you",
-                        "WhatsApp metadata if you contact us via chat",
-                        "Technical data: IP, device/browser, and pages viewed",
-                        "Cookies and identifiers for site analytics"
+                        "<strong>Contact details:</strong> Name, phone, and email from our forms.",
+                        "<strong>Case information:</strong> Case type and message content provided by you.",
+                        "<strong>WhatsApp metadata:</strong> Technical data if you contact us via chat.",
+                        "<strong>Technical data:</strong> IP address, device/browser type, and pages viewed.",
+                        "<strong>Cookies:</strong> Identifiers for site analytics and basic functionality."
                     ],
                     he: [
-                        "פרטי קשר (שם, טלפון, אימייל) מהטפסים שלנו",
-                        "סוג המקרה ותוכן ההודעה שנמסרו על ידך",
-                        "מטא-נתונים של וואטסאפ אם פנית אלינו בצ'אט",
-                        "נתונים טכניים: IP, מכשיר/דפדפן ודפים שנצפו",
-                        "עוגיות ומזהים לצורך ניתוח ביצועי האתר"
+                        "<strong>פרטי קשר:</strong> שם, טלפון ואימייל מהטפסים שלנו.",
+                        "<strong>מידע על המקרה:</strong> סוג המקרה ותוכן ההודעה שנמסרו על ידך.",
+                        "<strong>מטא-נתונים של וואטסאפ:</strong> נתונים טכניים אם פנית אלינו בצ'אט.",
+                        "<strong>נתונים טכניים:</strong> כתובת IP, סוג מכשיר/דפדפן ודפים שנצפו.",
+                        "<strong>עוגיות:</strong> מזהים לצורך ניתוח ביצועי האתר ותפקודי בסיס."
                     ]
                 },
-                what_to_do_title: { en: "How We Use & Share Data", he: "כיצד אנו משתמשים ומשתפים" },
+                what_to_do_title: { en: "Purposes & Legal Basis", he: "מטרות ובסיס משפטי" },
                 what_to_do: {
                     en: [
-                        "To reply to inquiries and schedule consultations",
-                        "To provide legal services if you become a client",
-                        "For site security and fraud prevention",
-                        "Shared with: hosting, email providers, and WhatsApp (Meta)",
-                        "We do not sell your data; sharing is strictly as necessary"
+                        "<strong>Purposes:</strong> Reply to inquiries, schedule consultations, provide legal services, and site security.",
+                        "<strong>Legal Basis:</strong> Consent (forms/WhatsApp), Legitimate Interests (security/analytics), and Contract (client relationship).",
+                        "<strong>Data Sharing:</strong> Shared with hosting, email providers, and WhatsApp (Meta) only as necessary. We never sell your data.",
+                        "<strong>Transfers:</strong> Data may be processed abroad with appropriate safeguards if providers store data outside Israel."
                     ],
                     he: [
-                        "כדי להשיב לפניות ולקבוע פגישות ייעוץ",
-                        "כדי לספק שירותים משפטיים אם תהפוך ללקוח",
-                        "לאבטחת האתר ומניעת הונאות",
-                        "משותף עם: אחסון, ספקי אימייל, וואטסאפ (Meta)",
-                        "איננו מוכרים את המידע שלך; השיתוף הוא רק לפי הצורך"
+                        "<strong>מטרות:</strong> מענה לפניות, קביעת פגישות ייעוץ, מתן שירותים משפטיים ואבטחת האתר.",
+                        "<strong>בסיס משפטי:</strong> הסכמה (טפסים/וואטסאפ), אינטרסים לגיטימיים (אבטחה/אנליטיקה) וחוזה (יחסי לקוח).",
+                        "<strong>שיתוף נתונים:</strong> משותף עם ספקי אחסון, אימייל ו-WhatsApp (Meta) רק לפי הצורך. איננו מוכרים מידע.",
+                        "<strong>העברות:</strong> מידע עשוי להיות מעובד בחו\"ל עם הגנות מתאימות אם הספקים שומרים מידע מחוץ לישראל."
                     ]
                 },
-                how_i_help_title: { en: "Your Rights & Legal Basis", he: "הזכויות שלך ובסיס משפטי" },
+                how_i_help_title: { en: "Retention & Your Rights", he: "שמירת נתונים והזכויות שלך" },
                 how_i_help: {
                     en: [
-                        "Legal Basis: Consent, Legitimate Interests, and Contract",
-                        "Rights: Access, correction, deletion, and withdrawal of consent",
-                        "Inquiries kept for 24 months; Client files per legal requirements",
-                        "Site not intended for children under 18 years of age",
-                        "Contact privacy@alonpardo.law for any requests"
+                        "<strong>Retention:</strong> Inquiries kept for 24 months. Client files per legal/professional requirements. Backups kept for 30 days.",
+                        "<strong>Cookies:</strong> Necessary cookies for site function; analytics load per browser settings. Manage via browser tools.",
+                        "<strong>Your Rights:</strong> Access, correction, deletion, and withdrawal of consent. We respond to requests within reasonable legal timeframes.",
+                        "<strong>Security:</strong> TLS encryption, restricted access, and vetted providers protect your data.",
+                        "<strong>Children:</strong> This site is not intended for children under 18."
                     ],
                     he: [
-                        "בסיס משפטי: הסכמה, אינטרסים לגיטימיים וחוזה",
-                        "זכויות: גישה, תיקון, מחיקה וביטול הסכמה",
-                        "פניות נשמרות ל-24 חודשים; תיקי לקוחות לפי דרישות הדין",
-                        "האתר אינו מיועד לילדים מתחת לגיל 18",
-                        "צרו קשר ב-privacy@alonpardo.law לכל בקשה"
+                        "<strong>שמירה:</strong> פניות נשמרות ל-24 חודשים. תיקי לקוחות לפי דרישות הדין/המקצוע. גיבויים נשמרים ל-30 יום.",
+                        "<strong>עוגיות:</strong> עוגיות הכרחיות לתפקוד האתר; אנליטיקה נטענת לפי הגדרות הדפדפן. ניהול דרך הגדרות הדפדפן.",
+                        "<strong>הזכויות שלך:</strong> גישה, תיקון, מחיקה וביטול הסכמה. אנו משיבים לבקשות בלוחות זמנים סבירים.",
+                        "<strong>אבטחה:</strong> הצפנת TLS, גישה מוגבלת וספקים בדוקים מגנים על המידע שלך.",
+                        "<strong>ילדים:</strong> אתר זה אינו מיועד לילדים מתחת לגיל 18."
                     ]
                 },
                 services: {
-                    en: ["Data retention periods", "International data transfers", "Cookie management", "Privacy update notifications"],
-                    he: ["תקופות שמירת נתונים", "העברת נתונים בינלאומית", "ניהול עוגיות", "הודעות על עדכון פרטיות"]
+                    en: ["Data controller details", "Collection breakdown", "Usage & sharing rules", "Legal grounds", "Retention policy", "User rights summary"],
+                    he: ["פרטי בעל השליטה", "פירוט איסוף", "כללי שימוש ושיתוף", "בסיסים משפטיים", "מדיניות שמירה", "סיכום זכויות משתמש"]
                 },
                 icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>`
             },
@@ -799,6 +757,15 @@
             document.getElementById('brand-link').innerHTML = content[lang].brand;
             document.getElementById('nav-expertise').textContent = content[lang].nav_expertise;
             document.getElementById('nav-philosophy').textContent = content[lang].nav_philosophy;
+            
+            // Add Last Updated for privacy/footer pages
+            const lastUpdatedContainer = document.getElementById('last-updated-container');
+            if (page.last_updated && lastUpdatedContainer) {
+                lastUpdatedContainer.textContent = page.last_updated[lang];
+                lastUpdatedContainer.classList.remove('hidden');
+            } else if (lastUpdatedContainer) {
+                lastUpdatedContainer.classList.add('hidden');
+            }
             
             // Adjust header font size based on language to match index.html
             if (lang === 'he') {
