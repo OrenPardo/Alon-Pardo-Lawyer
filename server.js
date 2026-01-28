@@ -33,6 +33,27 @@ app.get('/practice/accessibility-lawyer', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'expertise.html'));
 });
 
+// Legal and Policy Routes
+app.get('/privacy', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'expertise.html'));
+});
+
+app.get('/terms', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'expertise.html'));
+});
+
+app.get('/cookies', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'expertise.html'));
+});
+
+app.get('/disclaimer', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'expertise.html'));
+});
+
+app.get('/accessibility-statement', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'expertise.html'));
+});
+
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on http://0.0.0.0:${PORT}`);
 });
