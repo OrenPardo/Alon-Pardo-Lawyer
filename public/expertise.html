@@ -78,48 +78,44 @@
             <div class="grid lg:grid-cols-3 gap-12 items-start">
                 <!-- Left Content Area (2 cols) -->
                 <div class="lg:col-span-2">
-            <div class="hidden md:flex space-x-4 font-medium uppercase tracking-widest rtl:space-x-reverse mb-8 flex-wrap gap-y-2" id="policy-nav-chips">
-                <a href="#section-1" class="px-4 py-2 bg-stone-100 hover:bg-gold hover:text-white transition rounded-full text-xs" id="chip-1"></a>
-                <a href="#section-2" class="px-4 py-2 bg-stone-100 hover:bg-gold hover:text-white transition rounded-full text-xs" id="chip-2"></a>
-                <a href="#section-3" class="px-4 py-2 bg-stone-100 hover:bg-gold hover:text-white transition rounded-full text-xs" id="chip-3"></a>
-                <a href="#section-4" class="px-4 py-2 bg-stone-100 hover:bg-gold hover:text-white transition rounded-full text-xs" id="chip-4"></a>
-            </div>
+                    <div class="mb-12 rtl:text-right" id="expertise-header">
+                        <div id="icon-container" class="mb-6 text-gold"></div>
+                        <h1 id="expertise-title" class="text-5xl md:text-7xl mb-6 leading-tight"></h1>
+                        <p id="expertise-desc" class="text-xl md:text-2xl text-stone-600 leading-relaxed max-w-2xl"></p>
+                        <div id="expertise-scope" class="mt-8 px-6 py-3 bg-stone-100 border-l-4 rtl:border-l-0 rtl:border-r-4 border-gold text-stone-600 font-semibold tracking-wide inline-block"></div>
+                    </div>
 
-            <div class="mb-12 rtl:text-right" id="expertise-header">
-                <div id="icon-container" class="mb-6 text-gold"></div>
-                <h1 id="expertise-title" class="text-5xl md:text-7xl mb-4 leading-tight"></h1>
-                <p id="expertise-desc" class="text-xl md:text-2xl text-stone-600 leading-relaxed max-w-2xl"></p>
-                <p id="last-updated" class="text-stone-400 text-sm mt-2"></p>
-                <div id="expertise-scope" class="mt-8 px-6 py-3 bg-stone-100 border-l-4 rtl:border-l-0 rtl:border-r-4 border-gold text-stone-600 font-semibold tracking-wide inline-block"></div>
-            </div>
-
-            <!-- Content Sections (Long-form) -->
-            <div id="long-form-content" class="space-y-16 mb-20">
-                <section id="section-1" class="scroll-mt-32">
-                    <h2 id="title-1" class="text-3xl mb-6 text-stone-800 font-bold border-b border-stone-200 pb-4"></h2>
-                    <ul id="list-1" class="space-y-4 text-stone-600"></ul>
-                </section>
-                <section id="section-2" class="scroll-mt-32">
-                    <h2 id="title-2" class="text-3xl mb-6 text-stone-800 font-bold border-b border-stone-200 pb-4"></h2>
-                    <ul id="list-2" class="space-y-4 text-stone-600"></ul>
-                </section>
-                <section id="section-3" class="scroll-mt-32">
-                    <h2 id="title-3" class="text-3xl mb-6 text-stone-800 font-bold border-b border-stone-200 pb-4"></h2>
-                    <ul id="list-3" class="space-y-4 text-stone-600"></ul>
-                </section>
-                <section id="section-4" class="scroll-mt-32">
-                    <h2 id="title-4" class="text-3xl mb-6 text-stone-800 font-bold border-b border-stone-200 pb-4"></h2>
-                    <ul id="list-4" class="space-y-4 text-stone-600"></ul>
-                </section>
-            </div>
-            
-            <div id="criminal-sections" class="hidden"></div>
-            <div id="services-block" class="hidden"></div>
+                    <!-- New Sections for Criminal Law -->
+                    <div id="criminal-sections" class="hidden space-y-16 mb-20">
+                        <div class="grid md:grid-cols-2 gap-12">
+                            <div class="rtl:text-right">
+                                <h2 id="common-situations-title" class="text-3xl mb-6 text-stone-800 font-bold"></h2>
+                                <ul id="common-situations-list" class="space-y-4 text-stone-600"></ul>
+                            </div>
+                            <div class="rtl:text-right">
+                                <h2 id="what-to-do-title" class="text-3xl mb-6 text-stone-800 font-bold"></h2>
+                                <ul id="what-to-do-list" class="space-y-4 text-stone-600"></ul>
+                            </div>
+                        </div>
+                        <div class="rtl:text-right">
+                            <h2 id="how-i-help-title" class="text-3xl mb-6 text-stone-800 font-bold"></h2>
+                            <ul id="how-i-help-list" class="space-y-4 text-stone-600 max-w-2xl"></ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-16 rtl:text-right">
+                        <div class="border-t-2 border-gold pt-8">
+                            <h2 class="text-2xl font-bold mb-6 uppercase tracking-widest text-stone-400" id="services-label">Services</h2>
+                            <ul class="grid md:grid-cols-2 gap-y-2 gap-x-4 text-stone-600" id="services-list">
+                                <!-- Injected via JS -->
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Right Sidebar CTA Card -->
-                <div class="lg:col-span-1 sticky top-32 space-y-8" id="sidebar-cta">
-                    <div class="bg-stone-50 border border-stone-200 p-8 rounded-sm text-center shadow-sm" id="main-cta-box">
+                <div class="lg:col-span-1 sticky top-32">
+                    <div class="bg-stone-50 border border-stone-200 p-8 rounded-sm text-center shadow-sm">
                         <h3 class="text-2xl mb-4 font-bold" id="cta-title">Speak to a Lawyer</h3>
                         <p class="text-stone-600 mb-6 text-sm" id="cta-desc">Send 2-3 sentences and I'll reply with next steps.</p>
                         <a href="/#contact" class="inline-block bg-gold text-stone-900 border-2 border-gold px-8 py-4 font-bold uppercase tracking-widest hover:bg-stone-900 hover:text-white hover:border-stone-900 transition w-full text-center" id="cta-button-secondary">Book a Consultation</a>
@@ -135,7 +131,7 @@
                     </div>
 
                     <!-- What happens next -->
-                    <div class="p-8 bg-stone-900 text-white rounded-sm rtl:text-right" id="next-steps-card">
+                    <div class="mt-8 p-8 bg-stone-900 text-white rounded-sm rtl:text-right">
                         <h4 class="text-xl font-bold mb-6 border-b border-stone-700 pb-4" id="next-steps-title">What happens next</h4>
                         <ol class="space-y-6">
                             <li class="flex gap-4 items-start">
@@ -857,73 +853,69 @@
             document.getElementById('urgent-label').textContent = content[lang].urgent_label;
             document.getElementById('whatsapp-btn-text').textContent = content[lang].whatsapp_btn;
 
-            const isPolicyPage = ['privacy', 'terms', 'cookies', 'disclaimer', 'accessibility-statement'].includes(type);
-            const policyNav = document.getElementById('policy-nav-chips');
-            const nextStepsCard = document.getElementById('next-steps-card');
-            const lastUpdated = document.getElementById('last-updated');
-
-            if (isPolicyPage) {
-                policyNav.classList.remove('hidden');
-                nextStepsCard.classList.add('hidden');
-                document.getElementById('main-cta-box').classList.add('py-6', 'scale-95', 'opacity-90');
-                
-                lastUpdated.textContent = lang === 'en' ? 'Last updated: January 2026' : 'עודכן לאחרונה: ינואר 2026';
-                
-                document.getElementById('chip-1').textContent = page.common_situations_title[lang];
-                document.getElementById('chip-2').textContent = page.what_to_do_title[lang];
-                document.getElementById('chip-3').textContent = page.how_i_help_title[lang];
-                document.getElementById('chip-4').textContent = content[lang].services_label.split('(')[0].trim();
-            } else {
-                policyNav.classList.add('hidden');
-                nextStepsCard.classList.remove('hidden');
-                lastUpdated.textContent = '';
-            }
-
-            document.getElementById('title-1').textContent = page.common_situations_title[lang];
-            const list1 = document.getElementById('list-1');
-            list1.innerHTML = '';
-            page.common_situations[lang].forEach(item => {
-                const li = document.createElement('li');
-                li.className = 'flex items-start gap-3';
-                li.innerHTML = `<span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0"></span><span>${item}</span>`;
-                list1.appendChild(li);
-            });
-
-            document.getElementById('title-2').textContent = page.what_to_do_title[lang];
-            const list2 = document.getElementById('list-2');
-            list2.innerHTML = '';
-            page.what_to_do[lang].forEach(item => {
-                const li = document.createElement('li');
-                li.className = 'flex items-start gap-3';
-                li.innerHTML = `<span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0"></span><span>${item}</span>`;
-                list2.appendChild(li);
-            });
-
-            document.getElementById('title-3').textContent = page.how_i_help_title[lang];
-            const list3 = document.getElementById('list-3');
-            list3.innerHTML = '';
-            page.how_i_help[lang].forEach(item => {
-                const li = document.createElement('li');
-                li.className = 'flex items-start gap-3';
-                li.innerHTML = `<span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0"></span><span>${item}</span>`;
-                list3.appendChild(li);
-            });
-
-            document.getElementById('title-4').textContent = content[lang].services_label;
-            const list4 = document.getElementById('list-4');
-            list4.innerHTML = '';
-            page.services[lang].forEach(item => {
-                const li = document.createElement('li');
-                li.className = 'flex items-start gap-3';
-                li.innerHTML = `<span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0"></span><span>${item}</span>`;
-                list4.appendChild(li);
-            });
+            document.getElementById('next-steps-title').textContent = content[lang].next_steps_title;
+            document.getElementById('step-1-title').textContent = content[lang].step1_title;
+            document.getElementById('step-1-desc').textContent = content[lang].step1_desc;
+            document.getElementById('step-2-title').textContent = content[lang].step2_title;
+            document.getElementById('step-2-desc').textContent = content[lang].step2_desc;
+            document.getElementById('step-3-title').textContent = content[lang].step3_title;
+            document.getElementById('step-3-desc').textContent = content[lang].step3_desc;
 
             document.getElementById('expertise-title').textContent = page.title[lang];
             document.getElementById('expertise-desc').textContent = page.desc[lang];
             document.getElementById('icon-container').innerHTML = page.icon.replace('<svg', '<svg class="w-16 h-16"');
             document.getElementById('expertise-background').innerHTML = page.icon;
-            document.getElementById('expertise-scope').textContent = page.scope[lang];
+
+            // Handle criminal or accessibility-specific content
+            const criminalSections = document.getElementById('criminal-sections');
+            const expertiseScope = document.getElementById('expertise-scope');
+            
+            if (type === 'criminal' || type === 'accessibility' || type === 'admin' || type === 'labour' || type === 'transport' || type === 'privacy' || type === 'terms' || type === 'cookies' || type === 'disclaimer' || type === 'accessibility-statement') {
+                criminalSections.classList.remove('hidden');
+                expertiseScope.textContent = page.scope[lang];
+                
+                document.getElementById('common-situations-title').textContent = page.common_situations_title[lang];
+                const situationsList = document.getElementById('common-situations-list');
+                situationsList.innerHTML = '';
+                page.common_situations[lang].forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'flex items-start gap-3';
+                    li.innerHTML = `<span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0"></span><span>${item}</span>`;
+                    situationsList.appendChild(li);
+                });
+
+                document.getElementById('what-to-do-title').textContent = page.what_to_do_title[lang];
+                const whatToDoList = document.getElementById('what-to-do-list');
+                whatToDoList.innerHTML = '';
+                page.what_to_do[lang].forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'flex items-start gap-3';
+                    li.innerHTML = `<span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0"></span><span>${item}</span>`;
+                    whatToDoList.appendChild(li);
+                });
+
+                document.getElementById('how-i-help-title').textContent = page.how_i_help_title[lang];
+                const howIHelpList = document.getElementById('how-i-help-list');
+                howIHelpList.innerHTML = '';
+                page.how_i_help[lang].forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'flex items-start gap-3';
+                    li.innerHTML = `<span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0"></span><span>${item}</span>`;
+                    howIHelpList.appendChild(li);
+                });
+            } else {
+                criminalSections.classList.add('hidden');
+                expertiseScope.textContent = '';
+            }
+
+            const list = document.getElementById('services-list');
+            list.innerHTML = '';
+            page.services[lang].forEach(service => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start gap-3';
+                li.innerHTML = `<span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0"></span><span>${service}</span>`;
+                list.appendChild(li);
+            });
         }
 
         // Set up language toggle
