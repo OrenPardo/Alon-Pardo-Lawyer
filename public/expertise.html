@@ -604,12 +604,16 @@
                 document.getElementById('nav-expertise').classList.add('text-[1.10rem]');
                 document.getElementById('nav-philosophy').classList.add('text-[1.10rem]');
                 document.getElementById('nav-contact-button').classList.add('text-[1.10rem]');
+                document.getElementById('nav-contact-button').classList.remove('py-2');
+                document.getElementById('nav-contact-button').classList.add('py-[0.7rem]');
             } else {
                 document.getElementById('brand-link').classList.remove('text-[2.0rem]');
                 document.getElementById('brand-link').classList.add('text-2xl');
                 document.getElementById('nav-expertise').classList.remove('text-[1.10rem]');
                 document.getElementById('nav-philosophy').classList.remove('text-[1.10rem]');
                 document.getElementById('nav-contact-button').classList.remove('text-[1.10rem]');
+                document.getElementById('nav-contact-button').classList.remove('py-[0.7rem]');
+                document.getElementById('nav-contact-button').classList.add('py-2');
             }
             
             // Synchronize all links with the current language
