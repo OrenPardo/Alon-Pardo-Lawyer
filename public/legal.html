@@ -98,8 +98,9 @@
             html.setAttribute('dir', currentLang === 'he' ? 'rtl' : 'ltr');
             
             // Update back home link to preserve language
-            document.querySelector('[data-t="back_home"]').href = `/?lang=${currentLang}`;
-            document.querySelector('[data-t="brand_name"]').href = `/?lang=${currentLang}`;
+            const homeUrl = currentLang === 'en' ? '/?lang=en' : '/';
+            document.querySelector('[data-t="back_home"]').href = homeUrl;
+            document.querySelector('[data-t="brand_name"]').href = homeUrl;
         }
         updateContent();
     </script>

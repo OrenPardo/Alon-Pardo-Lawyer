@@ -250,7 +250,7 @@
             <h2 class="text-4xl md:text-5xl mb-3" data-t="contact_title">Speak to a Lawyer</h2>
             <p class="text-stone-400 mb-2" data-t="contact_subtitle">Share a short summary and I'll reply shortly with the next steps.</p>
             <p class="text-stone-500 text-sm mb-10" data-t="contact_trust">Confidential. You speak with me directly. No obligation to proceed.</p>
-            <form class="grid md:grid-cols-2 gap-6 text-left rtl:text-right" onsubmit="event.preventDefault(); alert('Form validation mock: Required fields checked.');">
+            <form id="contact-form" class="grid md:grid-cols-2 gap-6 text-left rtl:text-right" onsubmit="handleContactSubmit(event)">
                 <div>
                     <label for="full-name" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_name">Full Name *</label>
                     <input type="text" id="full-name" name="full-name" required class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition placeholder:font-light" data-placeholder="form_name_placeholder" placeholder="Your name">
@@ -264,12 +264,12 @@
                     <div class="relative">
                         <select id="case-type" name="case-type" required class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition appearance-none cursor-pointer" onfocus="this.parentElement.classList.add('select-open')" onblur="this.parentElement.classList.remove('select-open')" onchange="this.blur()">
                             <option value="" disabled selected data-t="opt_select">Select a Category</option>
-                            <option data-t="opt_criminal">Criminal Law</option>
-                            <option data-t="opt_transport">Transport Law</option>
-                            <option data-t="opt_admin">Administrative Law</option>
-                            <option data-t="opt_labour">Labour Law</option>
-                            <option data-t="opt_accessibility">Accessibility Law</option>
-                            <option data-t="opt_other">Other Enquiry</option>
+                            <option value="criminal" data-t="opt_criminal">Criminal Law</option>
+                            <option value="transport" data-t="opt_transport">Transport Law</option>
+                            <option value="admin" data-t="opt_admin">Administrative Law</option>
+                            <option value="labour" data-t="opt_labour">Labour Law</option>
+                            <option value="accessibility" data-t="opt_accessibility">Accessibility Law</option>
+                            <option value="other" data-t="opt_other">Other Enquiry</option>
                         </select>
                         <div class="absolute inset-y-0 right-0 rtl:right-auto rtl:left-0 flex items-center px-4 pointer-events-none transition-transform duration-300 select-arrow">
                             <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -290,6 +290,14 @@
                 </div>
                 <button type="submit" class="md:col-span-2 bg-gold text-stone-900 font-bold uppercase tracking-widest py-5 hover:bg-white transition" data-t="form_submit">Request a Consultation</button>
             </form>
+            <div id="form-success" class="hidden py-10 text-center">
+                <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <h3 class="text-2xl mb-3" data-t="form_success_title">Message Sent</h3>
+                <p class="text-stone-400 mb-6" data-t="form_success_desc">WhatsApp is opening with your message. I'll be in touch shortly.</p>
+                <button onclick="resetContactForm()" class="text-gold underline text-sm" data-t="form_success_back">Send another message</button>
+            </div>
             <div class="mt-8 text-center">
                 <p class="text-stone-500 text-sm mb-3" data-t="urgent_label">For urgent matters</p>
                 <a href="https://wa.me/972524203401" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-500 transition font-medium">
@@ -396,7 +404,10 @@
                 footer_disclaimer: "Legal Disclaimer",
                 footer_accessibility_statement: "Accessibility Statement",
                 footer_legal: "Legal Notice",
-                skip_to_content: "Skip to content"
+                skip_to_content: "Skip to content",
+                form_success_title: "Message Sent",
+                form_success_desc: "WhatsApp is opening with your message. I'll be in touch shortly.",
+                form_success_back: "Send another message"
             },
             he: {
                 nav_expertise: "תחומי עיסוק",
@@ -473,7 +484,10 @@
                 footer_disclaimer: "הצהרה משפטית",
                 footer_accessibility_statement: "הצהרת נגישות",
                 footer_legal: "הודעה משפטית",
-                skip_to_content: "דלג לתוכן המרכזי"
+                skip_to_content: "דלג לתוכן המרכזי",
+                form_success_title: "ההודעה נשלחה",
+                form_success_desc: "וואטסאפ נפתח עם ההודעה שלך. אחזור אליך בקרוב.",
+                form_success_back: "לשליחת הודעה נוספת"
             }
         };
 
@@ -666,11 +680,38 @@
 
         document.getElementById('lang-toggle').addEventListener('click', () => {
             currentLang = currentLang === 'en' ? 'he' : 'en';
-            // Update URL query param without reload
-            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?lang=' + currentLang;
-            window.history.pushState({path:newUrl},'',newUrl);
+            let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            if (currentLang === 'en') newUrl += '?lang=en';
+            window.history.pushState({path: newUrl}, '', newUrl);
             updateContent();
         });
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('full-name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const sel = document.getElementById('case-type');
+            const caseTypeLabel = sel.options[sel.selectedIndex].text;
+            const email = document.getElementById('email-address').value.trim();
+            const message = document.getElementById('message-summary').value.trim();
+
+            let waMessage;
+            if (currentLang === 'he') {
+                waMessage = `שם: ${name}\nטלפון: ${phone}\nסוג התיק: ${caseTypeLabel}${email ? '\nאימייל: ' + email : ''}\nפרטים:\n${message}`;
+            } else {
+                waMessage = `Name: ${name}\nPhone: ${phone}\nCase Type: ${caseTypeLabel}${email ? '\nEmail: ' + email : ''}\nDetails:\n${message}`;
+            }
+
+            window.open('https://wa.me/972524203401?text=' + encodeURIComponent(waMessage), '_blank');
+            document.getElementById('contact-form').classList.add('hidden');
+            document.getElementById('form-success').classList.remove('hidden');
+        }
+
+        function resetContactForm() {
+            document.getElementById('contact-form').reset();
+            document.getElementById('contact-form').classList.remove('hidden');
+            document.getElementById('form-success').classList.add('hidden');
+        }
     </script>
 </body>
 </html>

@@ -162,6 +162,22 @@
         </div>
     </main>
 
+    <footer class="py-12 bg-stone-950 text-stone-600 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-baseline gap-8">
+            <div class="text-xs uppercase tracking-widest order-2 md:order-1" id="footer-copy-expertise"></div>
+            <div class="flex flex-col md:flex-row items-baseline gap-8 order-1 md:order-2">
+                <button onclick="window.location.href='/'" class="text-xl font-bold tracking-tighter text-white hover:text-gold transition focus:outline-none whitespace-nowrap" id="footer-brand-expertise">ALON <span class="text-gold">PARDO</span></button>
+                <div class="text-xs uppercase tracking-widest flex flex-wrap items-baseline gap-x-6 gap-y-2" id="footer-links-expertise">
+                    <a href="/privacy" class="hover:text-white transition" id="fl-privacy">Privacy Policy</a>
+                    <a href="/terms" class="hover:text-white transition" id="fl-terms">Terms of Use</a>
+                    <a href="/cookies" class="hover:text-white transition" id="fl-cookies">Cookie Policy</a>
+                    <a href="/disclaimer" class="hover:text-white transition" id="fl-disclaimer">Legal Disclaimer</a>
+                    <a href="/accessibility-statement" class="hover:text-white transition" id="fl-access">Accessibility Statement</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script>
         const content = {
             en: {
@@ -923,6 +939,21 @@
                 list.appendChild(li);
             });
         }
+
+        // Footer
+        const footerCopy = { en: '&copy; 2026 Alon Pardo. All rights reserved.', he: '&copy; 2026 אלון פרדו. כל הזכויות שמורות.' };
+        const footerLabels = {
+            en: { brand: 'ALON <span class="text-gold">PARDO</span>', privacy: 'Privacy Policy', terms: 'Terms of Use', cookies: 'Cookie Policy', disclaimer: 'Legal Disclaimer', access: 'Accessibility Statement' },
+            he: { brand: 'אלון <span class="text-gold">פרדו</span>', privacy: 'מדיניות פרטיות', terms: 'תנאי שימוש', cookies: 'מדיניות עוגיות', disclaimer: 'הצהרה משפטית', access: 'הצהרת נגישות' }
+        };
+        document.getElementById('footer-copy-expertise').innerHTML = footerCopy[lang];
+        document.getElementById('footer-brand-expertise').innerHTML = footerLabels[lang].brand;
+        document.getElementById('footer-brand-expertise').onclick = function() { window.location.href = '/' + (lang === 'en' ? '?lang=en' : ''); };
+        document.getElementById('fl-privacy').textContent = footerLabels[lang].privacy;
+        document.getElementById('fl-terms').textContent = footerLabels[lang].terms;
+        document.getElementById('fl-cookies').textContent = footerLabels[lang].cookies;
+        document.getElementById('fl-disclaimer').textContent = footerLabels[lang].disclaimer;
+        document.getElementById('fl-access').textContent = footerLabels[lang].access;
 
         // Set up language toggle
         const langToggle = document.getElementById('lang-toggle');
