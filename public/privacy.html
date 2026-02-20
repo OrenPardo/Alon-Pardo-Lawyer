@@ -14,17 +14,38 @@
         .hero-gradient { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); }
         .text-gold { color: #926d27; }
         .bg-gold { background-color: #926d27; }
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #926d27;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
 </head>
 <body class="bg-stone-50 text-stone-900 leading-relaxed">
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200 py-4 px-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="/" class="text-xl font-bold tracking-tighter" data-t="brand_name">ALON <span class="text-gold">PARDO</span></a>
-            <a href="/" class="bg-stone-900 text-white px-6 py-2 text-sm uppercase tracking-widest hover:bg-gold transition" data-t="back_home">חזרה לדף הבית</a>
+    <a href="#main-content" class="skip-link" data-t="skip_to_content">Skip to content</a>
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200" aria-label="Main Navigation">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <button id="brand-btn" class="text-2xl font-bold tracking-tighter hover:text-gold transition focus:outline-none text-left rtl:text-right" aria-label="Back to home" data-t="brand_name">ALON <span class="text-gold">PARDO</span></button>
+            <div class="hidden md:flex space-x-8 font-medium uppercase tracking-widest rtl:space-x-reverse">
+                <a href="/#expertise" class="hover:text-gold transition" data-t="nav_expertise">תחומי עיסוק</a>
+                <a href="/#about" class="hover:text-gold transition" data-t="nav_philosophy">איך אני עובד</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button id="lang-toggle" class="text-xs font-bold uppercase tracking-widest hover:text-gold transition" aria-label="Switch Language / החלף שפה">HE</button>
+                <a href="/#contact" class="bg-stone-900 text-white px-6 py-2 text-sm uppercase tracking-widest hover:bg-gold transition" data-t="nav_get_in_touch">Get in Touch</a>
+            </div>
         </div>
     </nav>
 
-    <main class="pt-32 pb-24">
+    <main id="main-content" class="pt-32 pb-24">
         <div class="max-w-4xl mx-auto px-6">
             <header class="mb-16">
                 <h1 class="text-4xl md:text-5xl mb-4" data-t="privacy_header">מדיניות פרטיות</h1>
@@ -63,7 +84,10 @@
         const translations = {
             en: {
                 brand_name: 'ALON <span class="text-gold">PARDO</span>',
-                back_home: 'Back to Home',
+                skip_to_content: 'Skip to content',
+                nav_expertise: 'Practice Areas',
+                nav_philosophy: 'How I Work',
+                nav_get_in_touch: 'Book a Consultation',
                 privacy_title: 'Privacy Policy | Alon Pardo',
                 privacy_header: 'Privacy Policy',
                 p_sec1_title: '1. General',
@@ -78,7 +102,10 @@
             },
             he: {
                 brand_name: 'אלון <span class="text-gold">פרדו</span>',
-                back_home: 'חזרה לדף הבית',
+                skip_to_content: 'דלג לתוכן המרכזי',
+                nav_expertise: 'תחומי עיסוק',
+                nav_philosophy: 'איך אני עובד',
+                nav_get_in_touch: 'לקביעת ייעוץ משפטי',
                 privacy_title: 'מדיניות פרטיות | אלון פרדו',
                 privacy_header: 'מדיניות פרטיות',
                 p_sec1_title: '1. כללי',
@@ -106,13 +133,65 @@
             const html = document.getElementById('html-tag');
             html.setAttribute('lang', currentLang);
             html.setAttribute('dir', currentLang === 'he' ? 'rtl' : 'ltr');
-            
-            // Update back home link to preserve language
+
+            // Update brand button to navigate home with lang param
             const homeUrl = currentLang === 'en' ? '/?lang=en' : '/';
-            document.querySelector('[data-t="back_home"]').href = homeUrl;
-            document.querySelector('[data-t="brand_name"]').href = homeUrl;
+            const brandBtn = document.getElementById('brand-btn');
+            if (brandBtn) brandBtn.onclick = function() { window.location.href = homeUrl; };
+
+            // Update nav/CTA links with lang param
+            document.querySelectorAll('nav a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('/')) {
+                    try {
+                        const url = new URL(link.href, window.location.origin);
+                        if (currentLang === 'en') {
+                            url.searchParams.set('lang', 'en');
+                        } else {
+                            url.searchParams.delete('lang');
+                        }
+                        link.href = url.pathname + url.search + url.hash;
+                    } catch (e) {}
+                }
+            });
+
+            // Update lang toggle label
+            const langToggle = document.getElementById('lang-toggle');
+            if (langToggle) langToggle.textContent = currentLang === 'he' ? 'EN' : 'HE';
+
+            // Apply same Hebrew font-size boosts as homepage
+            document.querySelectorAll('nav a[data-t]').forEach(link => {
+                if (currentLang === 'he') {
+                    link.classList.remove('text-sm');
+                    link.classList.add('text-[1.10rem]');
+                } else {
+                    link.classList.remove('text-[1.10rem]');
+                    link.classList.add('text-sm');
+                }
+            });
+            const brandBtn = document.getElementById('brand-btn');
+            if (brandBtn) {
+                if (currentLang === 'he') {
+                    brandBtn.classList.remove('text-2xl', 'text-xl');
+                    brandBtn.classList.add('text-[2.0rem]');
+                } else {
+                    brandBtn.classList.remove('text-[2.0rem]');
+                    brandBtn.classList.add('text-2xl');
+                }
+            }
         }
         updateContent();
+
+        document.getElementById('lang-toggle').addEventListener('click', () => {
+            const newLang = currentLang === 'he' ? 'en' : 'he';
+            const url = new URL(window.location.href);
+            if (newLang === 'en') {
+                url.searchParams.set('lang', 'en');
+            } else {
+                url.searchParams.delete('lang');
+            }
+            window.location.href = url.pathname + url.search;
+        });
     </script>
 </body>
 </html>
