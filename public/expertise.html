@@ -980,8 +980,16 @@
             he: { brand: 'אלון <span class="text-gold">פרדו</span>', privacy: 'מדיניות פרטיות', terms: 'תנאי שימוש', cookies: 'מדיניות עוגיות', disclaimer: 'הצהרה משפטית', access: 'הצהרת נגישות' }
         };
         document.getElementById('footer-copy-expertise').innerHTML = footerCopy[lang];
-        document.getElementById('footer-brand-expertise').innerHTML = footerLabels[lang].brand;
-        document.getElementById('footer-brand-expertise').onclick = function() { window.location.href = '/' + (lang === 'en' ? '?lang=en' : ''); };
+        const footerBrandEl = document.getElementById('footer-brand-expertise');
+        footerBrandEl.innerHTML = footerLabels[lang].brand;
+        footerBrandEl.onclick = function() { window.location.href = '/' + (lang === 'en' ? '?lang=en' : ''); };
+        if (lang === 'he') {
+            footerBrandEl.classList.remove('text-xl');
+            footerBrandEl.classList.add('text-[2.0rem]');
+        } else {
+            footerBrandEl.classList.remove('text-[2.0rem]');
+            footerBrandEl.classList.add('text-xl');
+        }
         document.getElementById('fl-privacy').textContent = footerLabels[lang].privacy;
         document.getElementById('fl-terms').textContent = footerLabels[lang].terms;
         document.getElementById('fl-cookies').textContent = footerLabels[lang].cookies;
