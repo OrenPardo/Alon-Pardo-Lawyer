@@ -133,48 +133,22 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// SEO-friendly practice area routes
+// All routes that serve expertise.html (practice areas + legal/policy pages)
 const expertisePath = path.join(__dirname, 'public', 'expertise.html');
-
-app.get('/practice/criminal-lawyer', (req, res) => {
-    res.sendFile(expertisePath);
-});
-
-app.get('/practice/traffic-lawyer', (req, res) => {
-    res.sendFile(expertisePath);
-});
-
-app.get('/practice/administrative-lawyer', (req, res) => {
-    res.sendFile(expertisePath);
-});
-
-app.get('/practice/employment-lawyer', (req, res) => {
-    res.sendFile(expertisePath);
-});
-
-app.get('/practice/accessibility-lawyer', (req, res) => {
-    res.sendFile(expertisePath);
-});
-
-// Legal and Policy Routes
-app.get('/privacy', (req, res) => {
-    res.sendFile(expertisePath);
-});
-
-app.get('/terms', (req, res) => {
-    res.sendFile(expertisePath);
-});
-
-app.get('/cookies', (req, res) => {
-    res.sendFile(expertisePath);
-});
-
-app.get('/disclaimer', (req, res) => {
-    res.sendFile(expertisePath);
-});
-
-app.get('/accessibility-statement', (req, res) => {
-    res.sendFile(expertisePath);
+const expertiseRoutes = [
+    '/practice/criminal-lawyer',
+    '/practice/traffic-lawyer',
+    '/practice/administrative-lawyer',
+    '/practice/employment-lawyer',
+    '/practice/accessibility-lawyer',
+    '/privacy',
+    '/terms',
+    '/cookies',
+    '/disclaimer',
+    '/accessibility-statement'
+];
+expertiseRoutes.forEach(route => {
+    app.get(route, (req, res) => res.sendFile(expertisePath));
 });
 
 app.listen(PORT, '0.0.0.0', () => {

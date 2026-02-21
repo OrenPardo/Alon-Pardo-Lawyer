@@ -20,7 +20,8 @@
     <meta name="twitter:title" id="twitter-title" content="אלון פרדו | עורך דין">
     <meta name="twitter:description" id="twitter-description" content="ייצוג אישי בתחומי המשפט הפלילי, תעבורה, מינהלי, עבודה ונגישות.">
 
-    <!-- hreflang -->
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" id="canonical-link" href="/">
     <link rel="alternate" hreflang="he" href="/">
     <link rel="alternate" hreflang="en" href="/?lang=en">
     <link rel="alternate" hreflang="x-default" href="/">
@@ -725,6 +726,7 @@
             document.getElementById('og-locale').setAttribute('content', seo.locale);
             document.getElementById('twitter-title').setAttribute('content', seo.title);
             document.getElementById('twitter-description').setAttribute('content', seo.description);
+            document.getElementById('canonical-link').setAttribute('href', currentLang === 'en' ? '/?lang=en' : '/');
 
             // Position sticky WhatsApp button based on language
             const waBtn = document.getElementById('whatsapp-sticky');

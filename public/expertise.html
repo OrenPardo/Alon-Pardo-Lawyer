@@ -6,6 +6,23 @@
     <title id="page-title">Expertise | Alon Pardo</title>
     <meta name="description" id="meta-description" content="">
     <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="אלון פרדו - עורך דין">
+    <meta property="og:title" id="og-title" content="">
+    <meta property="og:description" id="og-description" content="">
+    <meta property="og:locale" id="og-locale" content="he_IL">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" id="twitter-title" content="">
+    <meta name="twitter:description" id="twitter-description" content="">
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" id="canonical-link" href="">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/tailwind.css">
@@ -1104,6 +1121,16 @@
             document.getElementById('page-title').textContent = pageTitle;
             const plainDesc = page.desc[lang].replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().slice(0, 160);
             document.getElementById('meta-description').setAttribute('content', plainDesc);
+
+            // Update OG, Twitter, and canonical meta tags
+            document.getElementById('og-title').setAttribute('content', pageTitle);
+            document.getElementById('og-description').setAttribute('content', plainDesc);
+            document.getElementById('og-locale').setAttribute('content', lang === 'he' ? 'he_IL' : 'en_US');
+            document.getElementById('twitter-title').setAttribute('content', pageTitle);
+            document.getElementById('twitter-description').setAttribute('content', plainDesc);
+            const canonicalUrl = window.location.pathname + (lang === 'en' ? '?lang=en' : '');
+            document.getElementById('canonical-link').setAttribute('href', canonicalUrl);
+
             document.getElementById('expertise-desc').innerHTML = page.desc[lang];
             document.getElementById('icon-container').innerHTML = page.icon.replace('<svg', '<svg aria-hidden="true" class="w-16 h-16"');
             document.getElementById('expertise-background').innerHTML = page.icon.replace('<svg', '<svg aria-hidden="true"');
