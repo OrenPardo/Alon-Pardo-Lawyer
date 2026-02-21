@@ -137,6 +137,7 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
 
 // Root route serves the landing page
 app.get('/', (req, res) => {
+    res.set('Cache-Control', 'no-cache');
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
@@ -155,7 +156,10 @@ const expertiseRoutes = [
     '/accessibility-statement'
 ];
 expertiseRoutes.forEach(route => {
-    app.get(route, (req, res) => res.sendFile(expertisePath));
+    app.get(route, (req, res) => {
+        res.set('Cache-Control', 'no-cache');
+        res.sendFile(expertisePath);
+    });
 });
 
 app.listen(PORT, '0.0.0.0', () => {
