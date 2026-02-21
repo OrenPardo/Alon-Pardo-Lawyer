@@ -1292,29 +1292,7 @@
     </a>
     <script>
         (function() {
-            const btn = document.getElementById('whatsapp-sticky');
-            const text = document.getElementById('whatsapp-sticky-text');
-            const lobbyPages = ['/privacy', '/terms', '/cookies', '/disclaimer', '/accessibility-statement'];
-            if (lobbyPages.includes(window.location.pathname)) {
-                btn.style.display = 'none';
-                return;
-            }
-            const lang = new URLSearchParams(window.location.search).get('lang') || 'he';
-            if (lang === 'en') {
-                btn.style.left = 'auto';
-                btn.style.right = '1.5rem';
-                btn.classList.add('flex-row-reverse');
-                btn.classList.remove('pl-5', 'pr-4');
-                btn.classList.add('pl-4', 'pr-5');
-                text.textContent = 'Urgent? WhatsApp me';
-                btn.setAttribute('aria-label', 'WhatsApp - Urgent? WhatsApp me');
-            } else {
-                btn.style.left = '1.5rem';
-                btn.style.right = 'auto';
-                btn.classList.remove('flex-row-reverse');
-                text.textContent = 'העניין דחוף? אפשר לשלוח וואטסאפ';
-                btn.setAttribute('aria-label', 'WhatsApp - העניין דחוף? אפשר לשלוח וואטסאפ');
-            }
+            document.getElementById('whatsapp-sticky').style.display = 'none';
         })();
     </script>
 </body>
