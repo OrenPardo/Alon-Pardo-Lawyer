@@ -162,5 +162,9 @@ cython_debug/
 # Node
 node_modules/
 
+# Replit
+.replit
+replit.nix
+
 # Claude Code
 .claude/
