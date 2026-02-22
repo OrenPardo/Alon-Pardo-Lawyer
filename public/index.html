@@ -56,7 +56,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/tailwind.css">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800" fetchpriority="high">
+    <link rel="stylesheet" href="/tailwind.css?v=1.0.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', 'Assistant', sans-serif; }
@@ -138,7 +140,7 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200" aria-label="Main Navigation">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-2xl font-bold tracking-tighter hover:text-gold transition text-left rtl:text-right" data-t="brand_name" aria-label="Back to top">ALON <span class="text-gold">PARDO</span></button>
+            <button id="brand-top-btn" class="text-2xl font-bold tracking-tighter hover:text-gold transition text-left rtl:text-right" data-t="brand_name" aria-label="Back to top">ALON <span class="text-gold">PARDO</span></button>
             <div class="hidden lg:flex space-x-8 font-medium text-sm uppercase tracking-widest rtl:space-x-reverse">
                 <a href="#expertise" class="hover:text-gold transition" data-t="nav_expertise">תחומי עיסוק</a>
                 <a href="#about" class="hover:text-gold transition" data-t="nav_philosophy">איך אני עובד</a>
@@ -153,9 +155,9 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-md border-t border-stone-200 px-6 py-6 space-y-4">
-            <a href="#expertise" class="block text-sm font-medium uppercase tracking-widest hover:text-gold transition py-2" data-t="nav_expertise" onclick="closeMobileMenu()">תחומי עיסוק</a>
-            <a href="#about" class="block text-sm font-medium uppercase tracking-widest hover:text-gold transition py-2" data-t="nav_philosophy" onclick="closeMobileMenu()">איך אני עובד</a>
-            <a href="#contact" class="block bg-stone-900 text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-gold transition text-center" data-t="nav_get_in_touch" onclick="closeMobileMenu()">Get in Touch</a>
+            <a href="#expertise" class="mobile-nav-link block text-sm font-medium uppercase tracking-widest hover:text-gold transition py-2" data-t="nav_expertise">תחומי עיסוק</a>
+            <a href="#about" class="mobile-nav-link block text-sm font-medium uppercase tracking-widest hover:text-gold transition py-2" data-t="nav_philosophy">איך אני עובד</a>
+            <a href="#contact" class="mobile-nav-link block bg-stone-900 text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-gold transition text-center" data-t="nav_get_in_touch">Get in Touch</a>
         </div>
     </nav>
 
@@ -172,7 +174,7 @@
                     <a href="#contact" class="bg-gold text-stone-900 px-8 py-4 text-center font-bold uppercase tracking-widest hover:bg-white transition" data-t="hero_cta_1">Book a Consultation</a>
                     <a href="#expertise" class="border border-stone-500 px-8 py-4 text-center font-bold uppercase tracking-widest hover:bg-white hover:text-stone-900 transition" data-t="hero_cta_2">View Practice Areas</a>
                 </div>
-                <p class="text-stone-500 text-sm mt-4" data-t="hero_cta_note">Speak with Alon directly • No obligation to proceed</p>
+                <p class="text-stone-400 text-sm mt-4" data-t="hero_cta_note">Speak with Alon directly • No obligation to proceed</p>
             </div>
             <div class="hidden md:block">
                 <div class="relative">
@@ -198,7 +200,7 @@
                         <svg aria-hidden="true" class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
                     </div>
                     <h3 class="text-xl mb-4" data-t="law_criminal_title">Criminal Law</h3>
-                    <ul class="text-stone-500 text-sm leading-relaxed space-y-1 flex-grow">
+                    <ul class="text-stone-600 text-sm leading-relaxed space-y-1 flex-grow">
                         <li data-t="law_criminal_bullet1">• Investigations & police questioning</li>
                         <li data-t="law_criminal_bullet2">• Hearings, indictments & bail</li>
                         <li data-t="law_criminal_bullet3">• Defense strategy & representation</li>
@@ -214,7 +216,7 @@
                         <svg aria-hidden="true" class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                     </div>
                     <h3 class="text-xl mb-4" data-t="law_accessibility_title">Accessibility Law</h3>
-                    <ul class="text-stone-500 text-sm leading-relaxed space-y-1 flex-grow">
+                    <ul class="text-stone-600 text-sm leading-relaxed space-y-1 flex-grow">
                         <li data-t="law_accessibility_bullet1">• Accessibility compliance guidance</li>
                         <li data-t="law_accessibility_bullet2">• Claims, disputes & risk reduction</li>
                         <li data-t="law_accessibility_bullet3">• Closing gaps: audits, plans, follow-through</li>
@@ -230,7 +232,7 @@
                         <svg aria-hidden="true" class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                     </div>
                     <h3 class="text-xl mb-4" data-t="law_admin_title">Administrative Law</h3>
-                    <ul class="text-stone-500 text-sm leading-relaxed space-y-1 flex-grow">
+                    <ul class="text-stone-600 text-sm leading-relaxed space-y-1 flex-grow">
                         <li data-t="law_admin_bullet1">• Appeals against authority decisions</li>
                         <li data-t="law_admin_bullet2">• Permits, sanctions & municipal matters</li>
                         <li data-t="law_admin_bullet3">• Deadlines, hearings & regulatory process</li>
@@ -246,7 +248,7 @@
                         <svg aria-hidden="true" class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
                     <h3 class="text-xl mb-4" data-t="law_labour_title">Employment Law</h3>
-                    <ul class="text-stone-500 text-sm leading-relaxed space-y-1 flex-grow">
+                    <ul class="text-stone-600 text-sm leading-relaxed space-y-1 flex-grow">
                         <li data-t="law_labour_bullet1">• Termination, hearings & severance</li>
                         <li data-t="law_labour_bullet2">• Contracts, claims & negotiations</li>
                         <li data-t="law_labour_bullet3">• Representation for employees & employers</li>
@@ -262,7 +264,7 @@
                         <svg aria-hidden="true" class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
                     </div>
                     <h3 class="text-xl mb-4" data-t="law_transport_title">Traffic Law</h3>
-                    <ul class="text-stone-500 text-sm leading-relaxed space-y-1 flex-grow">
+                    <ul class="text-stone-600 text-sm leading-relaxed space-y-1 flex-grow">
                         <li data-t="law_transport_bullet1">• License suspensions & points</li>
                         <li data-t="law_transport_bullet2">• DUI / serious traffic offenses</li>
                         <li data-t="law_transport_bullet3">• Court representation & penalty reduction</li>
@@ -276,9 +278,9 @@
             <!-- Helper Block -->
             <div class="mt-16 p-6 bg-stone-50 border border-stone-200 text-center rtl:text-center">
                 <h3 class="text-2xl mb-2" data-t="helper_title">Not sure where you fit?</h3>
-                <p class="text-stone-500 mb-4 max-w-xl mx-auto" data-t="helper_desc">Describe your situation in 2-3 sentences and I'll route you to the right track.</p>
+                <p class="text-stone-600 mb-4 max-w-xl mx-auto" data-t="helper_desc">Describe your situation in 2-3 sentences and I'll route you to the right track.</p>
                 <a href="#contact" class="inline-block bg-gold text-stone-900 px-8 py-4 font-bold uppercase tracking-widest hover:bg-black hover:text-white border border-gold transition" data-t="helper_cta">Book a Consultation</a>
-                <p class="mt-3 text-stone-400 text-xs flex items-center justify-center gap-1">
+                <p class="mt-3 text-stone-600 text-xs flex items-center justify-center gap-1">
                     <svg aria-hidden="true" class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
                     <span data-t="helper_trust">2–3 sentences is enough. Confidential. You speak with Alon directly.</span>
                 </p>
@@ -298,7 +300,7 @@
                     <div class="accent-border pl-6 rtl:pl-0 rtl:pr-6">
                         <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-gold" data-t="about_item_1_title">Direct Access</h4>
                         <p class="text-stone-600 text-sm" data-t="about_item_1_desc">Work directly with me from day one - clear communication, fast updates, and no intermediaries.</p>
-                        <p class="text-stone-400 text-xs mt-2 italic" data-t="about_item_1_micro">You'll always know what's happening and what comes next.</p>
+                        <p class="text-stone-600 text-xs mt-2 italic" data-t="about_item_1_micro">You'll always know what's happening and what comes next.</p>
                     </div>
                     <div class="accent-border pl-6 rtl:pl-0 rtl:pr-6">
                         <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-gold" data-t="about_item_2_title">Evidence-Driven</h4>
@@ -318,20 +320,22 @@
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl mb-3" data-t="contact_title">Speak to a Lawyer</h2>
             <p class="text-stone-400 mb-2" data-t="contact_subtitle">Share a short summary and I'll reply shortly with the next steps.</p>
-            <p class="text-stone-500 text-sm mb-10" data-t="contact_trust">Confidential. You speak with me directly. No obligation to proceed.</p>
-            <form id="contact-form" class="grid md:grid-cols-2 gap-6 text-left rtl:text-right" onsubmit="handleContactSubmit(event)">
+            <p class="text-stone-400 text-sm mb-10" data-t="contact_trust">Confidential. You speak with me directly. No obligation to proceed.</p>
+            <form id="contact-form" class="grid md:grid-cols-2 gap-6 text-left rtl:text-right">
                 <div>
-                    <label for="full-name" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_name">Full Name *</label>
-                    <input type="text" id="full-name" name="full-name" required aria-required="true" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition placeholder:font-light" data-placeholder="form_name_placeholder" placeholder="Your name">
+                    <label for="full-name" class="block text-xs uppercase tracking-widest text-stone-400 mb-2" data-t="form_name">Full Name *</label>
+                    <input type="text" id="full-name" name="full-name" required aria-required="true" aria-describedby="full-name-error" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition placeholder:font-light" data-placeholder="form_name_placeholder" placeholder="Your name">
+                    <span id="full-name-error" class="hidden text-red-400 text-xs mt-1" role="alert"></span>
                 </div>
                 <div>
-                    <label for="phone" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_phone">Phone (Preferred) *</label>
-                    <input type="tel" id="phone" name="phone" required aria-required="true" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition placeholder:font-light text-left rtl:text-right" data-placeholder="form_phone_placeholder" placeholder="05x-1234567">
+                    <label for="phone" class="block text-xs uppercase tracking-widest text-stone-400 mb-2" data-t="form_phone">Phone (Preferred) *</label>
+                    <input type="tel" id="phone" name="phone" required aria-required="true" aria-describedby="phone-error" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition placeholder:font-light text-left rtl:text-right" data-placeholder="form_phone_placeholder" placeholder="05x-1234567">
+                    <span id="phone-error" class="hidden text-red-400 text-xs mt-1" role="alert"></span>
                 </div>
                 <div class="relative">
-                    <label for="case-type" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_case_type">Case Type *</label>
+                    <label for="case-type" class="block text-xs uppercase tracking-widest text-stone-400 mb-2" data-t="form_case_type">Case Type *</label>
                     <div class="relative">
-                        <select id="case-type" name="case-type" required aria-required="true" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition appearance-none cursor-pointer" onfocus="this.parentElement.classList.add('select-open')" onblur="this.parentElement.classList.remove('select-open')" onchange="this.blur()">
+                        <select id="case-type" name="case-type" required aria-required="true" aria-describedby="case-type-error" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition appearance-none cursor-pointer">
                             <option value="" disabled selected data-t="opt_select">Select a Category</option>
                             <option value="criminal" data-t="opt_criminal">Criminal Law</option>
                             <option value="transport" data-t="opt_transport">Transport Law</option>
@@ -346,26 +350,29 @@
                             </svg>
                         </div>
                     </div>
+                    <span id="case-type-error" class="hidden text-red-400 text-xs mt-1" role="alert"></span>
                 </div>
                 <div>
-                    <label for="email-address" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_email">Email Address (Optional)</label>
-                    <input type="email" id="email-address" name="email-address" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition placeholder:font-light" data-placeholder="form_email_placeholder" placeholder="name@email.com">
+                    <label for="email-address" class="block text-xs uppercase tracking-widest text-stone-400 mb-2" data-t="form_email">Email Address (Optional)</label>
+                    <input type="email" id="email-address" name="email-address" aria-describedby="email-error" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition placeholder:font-light" data-placeholder="form_email_placeholder" placeholder="name@email.com">
+                    <span id="email-error" class="hidden text-red-400 text-xs mt-1" role="alert"></span>
                 </div>
                 <div class="md:col-span-2">
-                    <label for="message-summary" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_message">What happened? (a few details help me respond faster) *</label>
-                    <textarea id="message-summary" name="message-summary" rows="4" minlength="10" required aria-required="true" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition placeholder:font-light" data-placeholder="form_message_placeholder" placeholder="1) What happened?
+                    <label for="message-summary" class="block text-xs uppercase tracking-widest text-stone-400 mb-2" data-t="form_message">What happened? (a few details help me respond faster) *</label>
+                    <textarea id="message-summary" name="message-summary" rows="4" minlength="10" required aria-required="true" aria-describedby="message-error" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition placeholder:font-light" data-placeholder="form_message_placeholder" placeholder="1) What happened?
 2) When did it happen?
 3) What outcome do you want?"></textarea>
+                    <span id="message-error" class="hidden text-red-400 text-xs mt-1" role="alert"></span>
                 </div>
                 <button type="submit" class="md:col-span-2 bg-gold text-stone-900 font-bold uppercase tracking-widest py-5 hover:bg-white transition" data-t="form_submit">Request a Consultation</button>
             </form>
-            <div id="form-success" class="hidden py-10 text-center" role="status" aria-live="polite">
+            <div id="form-success" class="hidden py-10 text-center" role="status" aria-live="assertive">
                 <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                     <svg aria-hidden="true" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 </div>
                 <h3 class="text-2xl mb-3" data-t="form_success_title">Message Sent</h3>
                 <p class="text-stone-400 mb-6" data-t="form_success_desc">Your message has been sent. I'll be in touch shortly.</p>
-                <button onclick="resetContactForm()" class="text-gold underline text-sm" data-t="form_success_back">Send another message</button>
+                <button id="form-reset-btn" class="text-gold underline text-sm" data-t="form_success_back">Send another message</button>
             </div>
         </div>
     </section>
@@ -377,7 +384,7 @@
                 &copy; 2026 אלון פרדו. כל הזכויות שמורות.
             </div>
             <div id="footer-actions-wrapper" class="flex flex-col items-center md:items-baseline md:flex-row gap-6 md:gap-8 order-1 md:order-2 rtl:order-1">
-                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-xl font-bold tracking-tighter text-white hover:text-gold transition whitespace-nowrap" data-t="brand_name" aria-label="Back to top">אלון <span class="text-gold">פרדו</span></button>
+                <button id="footer-brand-btn" class="text-xl font-bold tracking-tighter text-white hover:text-gold transition whitespace-nowrap" data-t="brand_name" aria-label="Back to top">אלון <span class="text-gold">פרדו</span></button>
                 <div id="footer-links-wrapper" class="text-xs uppercase tracking-widest flex flex-col items-center md:flex-row md:flex-wrap md:justify-end gap-2 md:gap-x-6 md:gap-y-2">
                     <a href="/privacy" class="hover:text-white transition" data-t="footer_privacy">Privacy Policy</a>
                     <a href="/terms" class="hover:text-white transition" data-t="footer_terms">Terms of Service</a>
@@ -562,6 +569,9 @@
         const urlParams = new URLSearchParams(window.location.search);
         let currentLang = urlParams.get('lang') === 'en' ? 'en' : 'he';
 
+        // Keys that legitimately contain HTML markup
+        const htmlKeys = new Set(['brand_name', 'footer_copy']);
+
         // Mobile menu toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
@@ -582,11 +592,28 @@
         }
         document.getElementById('mobile-menu-toggle').addEventListener('click', toggleMobileMenu);
 
+        // Event listeners for elements that previously used inline handlers
+        document.getElementById('brand-top-btn').addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+        document.getElementById('footer-brand-btn').addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+        document.querySelectorAll('.mobile-nav-link').forEach(link => link.addEventListener('click', closeMobileMenu));
+        document.getElementById('contact-form').addEventListener('submit', handleContactSubmit);
+        document.getElementById('form-reset-btn').addEventListener('click', resetContactForm);
+
+        // Select arrow animation
+        const caseTypeSelect = document.getElementById('case-type');
+        caseTypeSelect.addEventListener('focus', () => caseTypeSelect.parentElement.classList.add('select-open'));
+        caseTypeSelect.addEventListener('blur', () => caseTypeSelect.parentElement.classList.remove('select-open'));
+        caseTypeSelect.addEventListener('change', () => caseTypeSelect.blur());
+
         function updateContent() {
             document.querySelectorAll('[data-t]').forEach(el => {
                 const key = el.getAttribute('data-t');
                 if (translations[currentLang][key]) {
-                    el.innerHTML = translations[currentLang][key];
+                    if (htmlKeys.has(key)) {
+                        el.innerHTML = translations[currentLang][key];
+                    } else {
+                        el.textContent = translations[currentLang][key];
+                    }
                 }
             });
             
@@ -792,14 +819,50 @@
             updateContent();
         });
 
+        // Custom form validation with accessible error messages
+        function showFieldError(fieldId, errorId, msg) {
+            const field = document.getElementById(fieldId);
+            const error = document.getElementById(errorId);
+            field.setAttribute('aria-invalid', 'true');
+            error.textContent = msg;
+            error.classList.remove('hidden');
+        }
+        function clearFieldError(fieldId, errorId) {
+            const field = document.getElementById(fieldId);
+            const error = document.getElementById(errorId);
+            field.removeAttribute('aria-invalid');
+            error.textContent = '';
+            error.classList.add('hidden');
+        }
+        function clearAllErrors() {
+            [['full-name','full-name-error'],['phone','phone-error'],['case-type','case-type-error'],['email-address','email-error'],['message-summary','message-error']].forEach(([f,e]) => clearFieldError(f,e));
+        }
+
         async function handleContactSubmit(event) {
             event.preventDefault();
-            const name = document.getElementById('full-name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
+            clearAllErrors();
+
+            const isHe = currentLang === 'he';
+            const nameField = document.getElementById('full-name');
+            const phoneField = document.getElementById('phone');
             const sel = document.getElementById('case-type');
-            const caseTypeLabel = sel.options[sel.selectedIndex].text;
-            const email = document.getElementById('email-address').value.trim();
-            const message = document.getElementById('message-summary').value.trim();
+            const emailField = document.getElementById('email-address');
+            const msgField = document.getElementById('message-summary');
+
+            const name = nameField.value.trim();
+            const phone = phoneField.value.trim();
+            const caseTypeLabel = sel.options[sel.selectedIndex]?.text;
+            const email = emailField.value.trim();
+            const message = msgField.value.trim();
+
+            let hasError = false;
+            if (!name) { showFieldError('full-name', 'full-name-error', isHe ? 'נא להזין שם מלא' : 'Please enter your full name'); hasError = true; }
+            if (!phone) { showFieldError('phone', 'phone-error', isHe ? 'נא להזין מספר טלפון' : 'Please enter your phone number'); hasError = true; }
+            else if (!/^[\d\s\-+().]+$/.test(phone)) { showFieldError('phone', 'phone-error', isHe ? 'מספר טלפון לא תקין' : 'Invalid phone number format'); hasError = true; }
+            if (!sel.value) { showFieldError('case-type', 'case-type-error', isHe ? 'נא לבחור סוג תיק' : 'Please select a case type'); hasError = true; }
+            if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showFieldError('email-address', 'email-error', isHe ? 'כתובת אימייל לא תקינה' : 'Invalid email address'); hasError = true; }
+            if (!message || message.length < 10) { showFieldError('message-summary', 'message-error', isHe ? 'נא להזין לפחות 10 תווים' : 'Please enter at least 10 characters'); hasError = true; }
+            if (hasError) return;
 
             const submitBtn = event.target.querySelector('button[type="submit"]');
             submitBtn.disabled = true;
@@ -817,7 +880,7 @@
 
             // Also open WhatsApp
             let waMessage;
-            if (currentLang === 'he') {
+            if (isHe) {
                 waMessage = `שם: ${name}\nטלפון: ${phone}\nסוג התיק: ${caseTypeLabel}${email ? '\nאימייל: ' + email : ''}\nפרטים:\n${message}`;
             } else {
                 waMessage = `Name: ${name}\nPhone: ${phone}\nCase Type: ${caseTypeLabel}${email ? '\nEmail: ' + email : ''}\nDetails:\n${message}`;
@@ -830,6 +893,7 @@
         }
 
         function resetContactForm() {
+            clearAllErrors();
             document.getElementById('contact-form').reset();
             document.getElementById('contact-form').classList.remove('hidden');
             document.getElementById('form-success').classList.add('hidden');

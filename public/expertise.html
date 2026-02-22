@@ -25,7 +25,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/tailwind.css">
+    <link rel="stylesheet" href="/tailwind.css?v=1.0.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', 'Assistant', sans-serif; }
@@ -163,7 +163,7 @@
                     
                     <div class="mt-16 rtl:text-right">
                         <div class="border-t-2 border-gold pt-8">
-                            <h2 class="text-2xl font-bold mb-6 uppercase tracking-widest text-stone-400" id="services-label">Services</h2>
+                            <h2 class="text-2xl font-bold mb-6 uppercase tracking-widest text-stone-600" id="services-label">Services</h2>
                             <ul class="grid md:grid-cols-2 gap-y-2 gap-x-4 text-stone-600" id="services-list">
                                 <!-- Injected via JS -->
                             </ul>
@@ -177,7 +177,7 @@
                         <h3 class="text-2xl mb-4 font-bold" id="cta-title">Speak to a Lawyer</h3>
                         <p class="text-stone-600 mb-6 text-sm" id="cta-desc">Send 2-3 sentences and I'll reply with next steps.</p>
                         <a href="/#contact" class="inline-block bg-gold text-stone-900 border-2 border-gold px-8 py-4 font-bold uppercase tracking-widest hover:bg-stone-900 hover:text-white hover:border-stone-900 transition w-full text-center" id="cta-button-secondary">Book a Consultation</a>
-                        <p id="cta-microcopy" class="mt-3 text-stone-400 text-xs"></p>
+                        <p id="cta-microcopy" class="mt-3 text-stone-600 text-xs"></p>
                         
                         <div id="urgent-contact" class="mt-8 border-t border-stone-200 pt-6">
                             <a href="https://wa.me/972524203401" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 text-black px-6 py-3 rounded-full hover:bg-green-500 transition font-medium w-full justify-center">
@@ -223,7 +223,7 @@
         <div id="footer-container-expertise" class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center md:items-baseline gap-4 md:gap-8">
             <div class="text-xs uppercase tracking-widest order-2 md:order-1 rtl:order-2 text-center md:text-left rtl:md:text-right" id="footer-copy-expertise"></div>
             <div id="footer-actions-expertise" class="flex flex-col items-center md:items-baseline md:flex-row gap-6 md:gap-8 order-1 md:order-2 rtl:order-1">
-                <button onclick="window.location.href='/'" class="text-xl font-bold tracking-tighter text-white hover:text-gold transition whitespace-nowrap" id="footer-brand-expertise">ALON <span class="text-gold">PARDO</span></button>
+                <button class="text-xl font-bold tracking-tighter text-white hover:text-gold transition whitespace-nowrap" id="footer-brand-expertise">ALON <span class="text-gold">PARDO</span></button>
                 <div class="text-xs uppercase tracking-widest flex flex-col items-center md:flex-row md:flex-wrap md:justify-end gap-2 md:gap-x-6 md:gap-y-2" id="footer-links-expertise">
                     <a href="/privacy" class="hover:text-white transition" id="fl-privacy">Privacy Policy</a>
                     <a href="/terms" class="hover:text-white transition" id="fl-terms">Terms of Service</a>
@@ -656,8 +656,8 @@
             'accessibility-statement': {
                 title: { en: "Accessibility Statement", he: "הצהרת נגישות" },
                 desc: {
-                    en: "Alon Pardo, Attorney at Law is committed to making this website accessible to all people, including people with disabilities, in accordance with the Equal Rights for Persons with Disabilities Act, 5758-1998, and the Equal Rights for Persons with Disabilities Regulations (Service Accessibility Adjustments), 5773-2013.<br><span class='text-sm text-stone-400 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Accessibility contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
-                    he: "עו\"ד אלון פרדו מחויב להנגיש אתר זה לכלל הציבור, לרבות אנשים עם מוגבלויות, בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ\"ח-1998, ותקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע\"ג-2013.<br><span class='text-sm text-stone-400 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; איש קשר נגישות: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
+                    en: "Alon Pardo, Attorney at Law is committed to making this website accessible to all people, including people with disabilities, in accordance with the Equal Rights for Persons with Disabilities Act, 5758-1998, and the Equal Rights for Persons with Disabilities Regulations (Service Accessibility Adjustments), 5773-2013.<br><span class='text-sm text-stone-600 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Accessibility contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
+                    he: "עו\"ד אלון פרדו מחויב להנגיש אתר זה לכלל הציבור, לרבות אנשים עם מוגבלויות, בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ\"ח-1998, ותקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע\"ג-2013.<br><span class='text-sm text-stone-600 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; איש קשר נגישות: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
                 },
                 scope: {
                     en: "<a href='#standard' class='hover:text-gold transition'>Standard & Law</a> &nbsp;·&nbsp; <a href='#features' class='hover:text-gold transition'>Accessibility Features</a> &nbsp;·&nbsp; <a href='#known-issues' class='hover:text-gold transition'>Known Limitations</a> &nbsp;·&nbsp; <a href='#contact-feedback' class='hover:text-gold transition'>Contact & Feedback</a>",
@@ -740,8 +740,8 @@
             privacy: {
                 title: { en: "Privacy Policy", he: "מדיניות פרטיות" },
                 desc: {
-                    en: "Alon Pardo, Attorney at Law (\"we\", \"us\") is the data controller for personal information collected through this website. We are committed to protecting your privacy and handling your data with the care it deserves.<br><span class='text-sm text-stone-400 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
-                    he: "עו\"ד אלון פרדו (\"אנחנו\", \"אנו\") הוא בעל השליטה בנתונים האישיים הנאספים באתר זה. אנו מחויבים להגנה על פרטיותך ולטיפול במידע שלך בזהירות המתאימה.<br><span class='text-sm text-stone-400 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; צרו קשר: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
+                    en: "Alon Pardo, Attorney at Law (\"we\", \"us\") is the data controller for personal information collected through this website. We are committed to protecting your privacy and handling your data with the care it deserves.<br><span class='text-sm text-stone-600 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
+                    he: "עו\"ד אלון פרדו (\"אנחנו\", \"אנו\") הוא בעל השליטה בנתונים האישיים הנאספים באתר זה. אנו מחויבים להגנה על פרטיותך ולטיפול במידע שלך בזהירות המתאימה.<br><span class='text-sm text-stone-600 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; צרו קשר: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
                 },
                 scope: {
                     en: "<a href='#data-collect' class='hover:text-gold transition'>What We Collect</a> &nbsp;·&nbsp; <a href='#purpose-basis' class='hover:text-gold transition'>Why & Legal Basis</a> &nbsp;·&nbsp; <a href='#sharing-rights' class='hover:text-gold transition'>Sharing & Retention</a> &nbsp;·&nbsp; <a href='#your-rights' class='hover:text-gold transition'>Your Rights</a>",
@@ -828,8 +828,8 @@
             terms: {
                 title: { en: "Terms of Service", he: "תנאי שירות" },
                 desc: {
-                    en: "These terms govern your use of the website operated by Alon Pardo, Attorney at Law. By accessing or using this site, you agree to be bound by these terms. If you do not agree, please do not use this website.<br><span class='text-sm text-stone-400 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
-                    he: "תנאים אלו מסדירים את השימוש שלך באתר המופעל על ידי עו\"ד אלון פרדו. בגישה לאתר או בשימוש בו, הינך מסכים להיות מחויב לתנאים אלו. אם אינך מסכים, אנא הימנע משימוש באתר.<br><span class='text-sm text-stone-400 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; צרו קשר: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
+                    en: "These terms govern your use of the website operated by Alon Pardo, Attorney at Law. By accessing or using this site, you agree to be bound by these terms. If you do not agree, please do not use this website.<br><span class='text-sm text-stone-600 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
+                    he: "תנאים אלו מסדירים את השימוש שלך באתר המופעל על ידי עו\"ד אלון פרדו. בגישה לאתר או בשימוש בו, הינך מסכים להיות מחויב לתנאים אלו. אם אינך מסכים, אנא הימנע משימוש באתר.<br><span class='text-sm text-stone-600 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; צרו קשר: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
                 },
                 scope: {
                     en: "<a href='#site-use' class='hover:text-gold transition'>Site Use</a> &nbsp;·&nbsp; <a href='#ip-content' class='hover:text-gold transition'>Content & IP</a> &nbsp;·&nbsp; <a href='#liability' class='hover:text-gold transition'>Liability</a> &nbsp;·&nbsp; <a href='#governing-law' class='hover:text-gold transition'>Governing Law</a>",
@@ -908,8 +908,8 @@
             cookies: {
                 title: { en: "Cookie Policy", he: "מדיניות עוגיות" },
                 desc: {
-                    en: "This policy explains what cookies are, how we use them on this website, and how you can manage your preferences. This site is operated by Alon Pardo, Attorney at Law.<br><span class='text-sm text-stone-400 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
-                    he: "מדיניות זו מסבירה מהן עוגיות, כיצד אנו משתמשים בהן באתר זה וכיצד ניתן לנהל את ההעדפות שלך. אתר זה מופעל על ידי עו\"ד אלון פרדו.<br><span class='text-sm text-stone-400 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; צרו קשר: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
+                    en: "This policy explains what cookies are, how we use them on this website, and how you can manage your preferences. This site is operated by Alon Pardo, Attorney at Law.<br><span class='text-sm text-stone-600 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
+                    he: "מדיניות זו מסבירה מהן עוגיות, כיצד אנו משתמשים בהן באתר זה וכיצד ניתן לנהל את ההעדפות שלך. אתר זה מופעל על ידי עו\"ד אלון פרדו.<br><span class='text-sm text-stone-600 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; צרו קשר: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
                 },
                 scope: {
                     en: "<a href='#what-are-cookies' class='hover:text-gold transition'>What Are Cookies</a> &nbsp;·&nbsp; <a href='#cookies-we-use' class='hover:text-gold transition'>Cookies We Use</a> &nbsp;·&nbsp; <a href='#third-party' class='hover:text-gold transition'>Third Parties</a> &nbsp;·&nbsp; <a href='#manage-cookies' class='hover:text-gold transition'>Your Choices</a>",
@@ -982,8 +982,8 @@
             disclaimer: {
                 title: { en: "Legal Disclaimer", he: "הצהרה משפטית" },
                 desc: {
-                    en: "Please read this disclaimer carefully before using this website. It sets out important limitations regarding the content published here by Alon Pardo, Attorney at Law.<br><span class='text-sm text-stone-400 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
-                    he: "אנא קראו הצהרה זו בעיון לפני השימוש באתר. היא מפרטת מגבלות חשובות בנוגע לתוכן המפורסם כאן על ידי עו\"ד אלון פרדו.<br><span class='text-sm text-stone-400 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; צרו קשר: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
+                    en: "Please read this disclaimer carefully before using this website. It sets out important limitations regarding the content published here by Alon Pardo, Attorney at Law.<br><span class='text-sm text-stone-600 mt-2 block'>Last updated: February 2026 &nbsp;·&nbsp; Contact: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>",
+                    he: "אנא קראו הצהרה זו בעיון לפני השימוש באתר. היא מפרטת מגבלות חשובות בנוגע לתוכן המפורסם כאן על ידי עו\"ד אלון פרדו.<br><span class='text-sm text-stone-600 mt-2 block'>עדכון אחרון: פברואר 2026 &nbsp;·&nbsp; צרו קשר: <a href='mailto:pardoal003@gmail.com' class='text-gold hover:underline'>pardoal003@gmail.com</a></span>"
                 },
                 scope: {
                     en: "<a href='#not-advice' class='hover:text-gold transition'>Not Legal Advice</a> &nbsp;·&nbsp; <a href='#no-relationship' class='hover:text-gold transition'>No Attorney-Client Relationship</a> &nbsp;·&nbsp; <a href='#accuracy' class='hover:text-gold transition'>Accuracy & Liability</a> &nbsp;·&nbsp; <a href='#external' class='hover:text-gold transition'>External Links & Jurisdiction</a>",

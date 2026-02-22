@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://YOURDOMAIN.com/</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://YOURDOMAIN.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/practice/criminal-lawyer</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://YOURDOMAIN.com/practice/criminal-lawyer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/practice/criminal-lawyer?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/practice/traffic-lawyer</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://YOURDOMAIN.com/practice/traffic-lawyer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/practice/traffic-lawyer?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/practice/administrative-lawyer</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://YOURDOMAIN.com/practice/administrative-lawyer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/practice/administrative-lawyer?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/practice/employment-lawyer</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://YOURDOMAIN.com/practice/employment-lawyer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/practice/employment-lawyer?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/practice/accessibility-lawyer</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://YOURDOMAIN.com/practice/accessibility-lawyer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/practice/accessibility-lawyer?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://YOURDOMAIN.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/privacy?lang=en"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/terms</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://YOURDOMAIN.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/terms?lang=en"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/cookies</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://YOURDOMAIN.com/cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/cookies?lang=en"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/disclaimer</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://YOURDOMAIN.com/disclaimer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/disclaimer?lang=en"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/accessibility-statement</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://YOURDOMAIN.com/accessibility-statement"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/accessibility-statement?lang=en"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>
