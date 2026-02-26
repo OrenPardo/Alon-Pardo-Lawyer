@@ -242,7 +242,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="md:col-span-2 bg-gold text-stone-900 font-bold uppercase tracking-widest py-5 hover:bg-white transition disabled:opacity-50 cursor-pointer"
+        className="md:col-span-2 bg-gold text-white font-bold uppercase tracking-widest py-5 hover:bg-white hover:text-stone-900 transition disabled:opacity-50 cursor-pointer"
       >
         {submitting ? '...' : t('form_submit')}
       </button>

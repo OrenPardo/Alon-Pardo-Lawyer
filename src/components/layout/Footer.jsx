@@ -19,7 +19,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="py-12 bg-stone-950 text-stone-600 border-t border-stone-800">
+    <footer className="py-12 bg-stone-950 text-stone-400 border-t border-stone-800">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-baseline gap-4 md:gap-8 justify-between">
         {/* Brand + policy links — always visually first (left in LTR, right in RTL) */}
         <div className={`flex flex-col items-center md:items-baseline md:flex-row gap-6 md:gap-8 order-1`}>

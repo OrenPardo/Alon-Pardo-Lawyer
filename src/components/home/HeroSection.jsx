@@ -24,7 +24,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="#contact"
-              className={`bg-gold text-stone-900 px-8 py-4 text-center font-bold uppercase tracking-widest hover:bg-white transition ${isHe ? 'text-[1.1rem]' : ''}`}
+              className={`bg-gold text-white px-8 py-4 text-center font-bold uppercase tracking-widest hover:bg-white hover:text-stone-900 transition ${isHe ? 'text-[1.1rem]' : ''}`}
             >
               {t('hero_cta_1')}
             </Link>

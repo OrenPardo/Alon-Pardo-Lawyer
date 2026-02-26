@@ -1,6 +1,6 @@
 {
   "name": "lawyer-landing-page",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Professional landing page for a self-employed lawyer",
   "scripts": {
     "dev": "next dev",

@@ -192,7 +192,7 @@ export default function PracticeAreaContent({ areaKey, isPolicy = false }) {
               <p className="text-stone-600 mb-6 text-sm">{t('cta_desc')}</p>
               <Link
                 href="/#contact"
-                className="inline-block bg-gold text-stone-900 border-2 border-gold px-8 py-4 font-bold uppercase tracking-widest hover:bg-stone-900 hover:text-white hover:border-stone-900 transition w-full text-center"
+                className="inline-block bg-gold text-white border-2 border-gold px-8 py-4 font-bold uppercase tracking-widest hover:bg-stone-900 hover:border-stone-900 transition w-full text-center"
               >
                 {t('cta_button_sec')}
               </Link>
@@ -222,7 +222,7 @@ export default function PracticeAreaContent({ areaKey, isPolicy = false }) {
                 <ol className="space-y-6">
                   {[1, 2, 3].map((n) => (
                     <li key={n} className="flex gap-4 items-start">
-                      <span className="bg-gold text-stone-900 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">
+                      <span className="bg-gold text-white w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">
                         {n}
                       </span>
                       <div>

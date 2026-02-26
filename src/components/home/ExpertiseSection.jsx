@@ -26,7 +26,7 @@ export default function ExpertiseSection() {
           <p className="text-stone-600 mb-4 max-w-xl mx-auto">{t('helper_desc')}</p>
           <Link
             href="#contact"
-            className="inline-block bg-gold text-stone-900 px-8 py-4 font-bold uppercase tracking-widest hover:bg-black hover:text-white border border-gold transition"
+            className="inline-block bg-gold text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-black border border-gold transition"
           >
             {t('helper_cta')}
           </Link>
